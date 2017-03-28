@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_try"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#000"
+    tools:context="com.example.puff.finalproject.student.Try">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/t"
+        android:text="Email"
+        android:textColor="#fff"
+        android:layout_marginRight="40dp"
+        android:textSize="30dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:inputType="textEmailAddress"
+        android:background="#fff"
+        android:textColor="#000"
+        android:layout_alignLeft="@+id/b"
+        android:layout_alignStart="@+id/b" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b"
+        android:text="Submit"
+        android:textSize="30dp"
+        android:onClick="onClick"
+        android:layout_marginRight="58dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/t"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:text="India"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="121dp"
+        android:id="@+id/check2"
+        android:layout_below="@+id/b"
+        android:layout_alignParentStart="true"
+        app:buttonTint="#fff" />
+
+    <TextView
+        android:text="India"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_alignBottom="@+id/check2"
+        android:layout_centerHorizontal="true"
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:id="@+id/check3"
+        android:layout_below="@+id/check2"
+        android:layout_alignStart="@+id/check2"
+        app:buttonTint="#fff"
+        android:text="Canada" />
+
+    <TextView
+        android:text="Canada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_alignBottom="@+id/check3"
+        android:layout_alignStart="@+id/textView3"
+        android:textColor="#fff"
+        android:textSize="20dp" />
+
+    <TextView
+        android:text="Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/textView5"
+        android:textSize="25dp"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/t" />
+
+
+</RelativeLayout>

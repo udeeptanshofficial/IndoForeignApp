@@ -1,0 +1,130 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/c1"
+    tools:context="com.example.puff.finalproject.student.QuickLink">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ask"
+        android:textColor="#fff"
+        android:id="@+id/b1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ask Our Counsellor"
+        android:textSize="20dp"
+        android:clickable="true"
+        android:id="@+id/t1"
+        android:textColor="#fff"
+        android:layout_alignBottom="@+id/b1"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/b2"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/scholar"
+        android:layout_below="@id/b1"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scholarships"
+        android:clickable="true"
+        android:textSize="20dp"
+        android:id="@+id/t2"
+        android:textColor="#fff"
+        android:layout_alignBottom="@+id/b2"
+        android:layout_alignLeft="@+id/t1"
+        android:layout_alignStart="@+id/t1" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/b3"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/visa"
+        android:layout_below="@id/b2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visa Application"
+        android:clickable="true"
+        android:textSize="20dp"
+        android:id="@+id/t3"
+        android:textColor="#fff"
+        android:layout_alignBottom="@+id/b3"
+        android:layout_alignLeft="@+id/t2"
+        android:layout_alignStart="@+id/t2" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/b4"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/test"
+        android:layout_below="@id/b3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Standardized Tests"
+        android:clickable="true"
+        android:textSize="20dp"
+        android:id="@+id/t4"
+        android:textColor="#fff"
+        android:layout_alignBottom="@+id/b4"
+        android:layout_alignLeft="@+id/t3"
+        android:layout_alignStart="@+id/t3" />
+
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/b5"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/loan"
+        android:layout_below="@id/b4"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Educational Loans"
+        android:clickable="true"
+        android:textSize="20dp"
+        android:id="@+id/t5"
+        android:textColor="#fff"
+        android:layout_alignBottom="@+id/b5"
+        android:layout_alignLeft="@+id/t4"
+        android:layout_alignStart="@+id/t4" />
+
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/b6"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/vas"
+        android:layout_below="@id/b5"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Value Added Services"
+        android:clickable="true"
+        android:textSize="20dp"
+        android:id="@+id/t6"
+        android:textColor="#fff"
+        android:layout_alignBottom="@+id/b6"
+        android:layout_alignLeft="@+id/t5"
+        android:layout_alignStart="@+id/t5" />
+
+</RelativeLayout>

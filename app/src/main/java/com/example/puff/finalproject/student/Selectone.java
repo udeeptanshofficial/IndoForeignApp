@@ -1,0 +1,37 @@
+package com.example.puff.finalproject.student;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import com.example.puff.finalproject.R;
+
+public class Selectone extends AppCompatActivity implements View.OnClickListener {
+    Button btn1,btn2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_selectone);
+        btn1=(Button)findViewById(R.id.button2);
+        btn1.setOnClickListener(this);
+
+        btn2=(Button)findViewById(R.id.button3);
+        btn2.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v==btn1)
+        {
+
+        }
+        if(v==btn2)
+        {
+            Intent i=new Intent(this,SignUp.class);
+            startActivity(i);
+        }
+    }
+}

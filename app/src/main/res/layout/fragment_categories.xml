@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/c1"
+    tools:context="com.example.puff.finalproject.student.Categories">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Country Preference"
+        android:textColor="#fff"
+        android:id="@+id/t1"
+        android:textSize="30dp"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/c1"
+        android:buttonTint="#fff"
+        android:layout_below="@+id/t1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:text="Canada"
+        android:textColor="#000" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/c2"
+        android:buttonTint="#fff"
+        android:layout_below="@id/c1"
+        android:text="Australia" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Courses"
+        android:textColor="#fff"
+        android:id="@+id/t5"
+        android:textSize="30dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your course/subject"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:layout_below="@id/t5"
+        android:id="@+id/e1"/>
+
+   <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s1"
+        android:layout_below="@id/e1"
+        android:layout_alignParentLeft="true"
+        android:backgroundTint="#fff"
+        android:layout_alignParentStart="true">
+    </Spinner>
+
+
+    <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@android:id/text1"
+        style="?android:attr/spinnerItemStyle"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:textSize="18sp"
+        android:textColor="#fff"
+        android:text="[Choose Study Level...]"
+        android:layout_below="@id/e1"/>-->
+
+    <Button
+        android:text="SUBMIT"
+        android:textSize="20dp"
+        android:onClick="onClick"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/b1"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/t3"
+        android:layout_toEndOf="@+id/t3"
+        android:layout_marginBottom="58dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/c3"
+        android:buttonTint="#fff"
+        android:text="New Zealand"
+        android:layout_below="@+id/c2"
+        android:layout_alignEnd="@+id/t5"
+        android:layout_marginEnd="11dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Zealand"
+        android:textColor="#fff"
+        android:id="@+id/t4"
+        android:textSize="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_alignBottom="@+id/c3"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Australia"
+        android:textColor="#fff"
+        android:id="@+id/t3"
+        android:textSize="20dp"
+        android:layout_above="@+id/c3"
+        android:layout_alignStart="@+id/t4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Canada"
+        android:textColor="#fff"
+        android:id="@+id/t2"
+        android:textSize="20dp"
+        android:layout_alignBaseline="@+id/c1"
+        android:layout_alignBottom="@+id/c1"
+        android:layout_alignStart="@+id/t3" />
+
+
+</RelativeLayout>
