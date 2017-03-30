@@ -17,7 +17,7 @@
     <EditText
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:hint="Enter your name"
+    android:hint="Enter file name"
     android:textColor="#fff"
         android:id="@+id/e1"
         android:layout_below="@id/t1"
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Browse"
-        android:id="@+id/b1"
+        android:id="@+id/b_10"
         android:layout_alignTop="@+id/e1"
         android:layout_toEndOf="@+id/e1"
         android:layout_marginStart="20dp" />
@@ -39,14 +39,14 @@
         android:textColor="#fff"
         android:id="@+id/t2"
         android:textSize="30dp"
-        android:layout_below="@+id/b1"
+        android:layout_below="@+id/b_10"
         android:layout_alignParentStart="true"
         android:layout_marginTop="18dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter your name"
+        android:hint="Enter file name"
         android:textColor="#fff"
         android:id="@+id/e2"
         android:layout_below="@id/t2"
@@ -56,18 +56,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Browse"
-        android:id="@+id/b3"
+        android:id="@+id/b_12"
         android:layout_alignBottom="@+id/e2"
-        android:layout_alignStart="@+id/b1" />
+        android:layout_alignStart="@+id/b_10" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upload"
-        android:id="@+id/b4"
-        android:layout_alignBaseline="@+id/b3"
-        android:layout_alignBottom="@+id/b3"
-        android:layout_alignStart="@+id/b2" />
+        android:id="@+id/b_12upload"
+        android:layout_alignBaseline="@+id/b_12"
+        android:layout_alignBottom="@+id/b_12"
+        android:layout_alignStart="@+id/b_10upload"
+        android:visibility="invisible"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -83,7 +84,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter your name"
+        android:hint="Enter file name"
         android:textColor="#fff"
         android:id="@+id/e3"
         android:layout_below="@id/t3"
@@ -93,27 +94,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upload"
-        android:id="@+id/b6"
-        android:layout_below="@+id/t3"
-        android:layout_alignStart="@+id/b4" />
+        android:id="@+id/b_gupload"
+        android:layout_alignBaseline="@+id/b_g"
+        android:layout_alignBottom="@+id/b_g"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/b5"
+        android:id="@+id/b_g"
         android:text="Browse"
         android:layout_alignBaseline="@+id/e3"
         android:layout_alignBottom="@+id/e3"
-        android:layout_alignStart="@+id/b3" />
+        android:layout_alignStart="@+id/b_12" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upload"
-        android:id="@+id/b2"
-        android:layout_alignBaseline="@+id/b1"
-        android:layout_alignBottom="@+id/b1"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/b_10upload"
+        android:layout_alignBaseline="@+id/b_10"
+        android:layout_alignBottom="@+id/b_10"
+        android:layout_alignParentEnd="true"
+        android:visibility="invisible"/>
 
 
 </RelativeLayout>

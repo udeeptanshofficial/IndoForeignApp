@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.puff.finalproject.R;
 
@@ -36,7 +38,7 @@ import static android.app.Activity.RESULT_OK;
  * create an instance of this fragment.
  */
 @TargetApi(23)
-public class Upload extends Fragment {
+public class Upload extends Fragment implements View.OnClickListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -47,7 +49,6 @@ public class Upload extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
 
     public Upload() {
         // Required empty public constructor
@@ -79,32 +80,79 @@ public class Upload extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    EditText et10,et12,etg;
+    Button browse_10,browse_12,browse_g,upload_10,upload_12,upload_g;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_upload, container, false);
-        Button browse = (Button)view.findViewById(R.id.b1);
-        Button upload = (Button)view.findViewById(R.id.b2);
-        browse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                Intent intent = new Intent();
+        browse_10 = (Button) view.findViewById(R.id.b_10);
+        browse_12 = (Button) view.findViewById(R.id.b_12);
+        browse_g = (Button) view.findViewById(R.id.b_g);
+        upload_10 = (Button) view.findViewById(R.id.b_10upload);
+        upload_12 = (Button) view.findViewById(R.id.b_12upload);
+        upload_g = (Button) view.findViewById(R.id.b_gupload);
+            et10 = (EditText) view.findViewById(R.id.e1);
+            et12 = (EditText) view.findViewById(R.id.e2);
+             etg = (EditText) view.findViewById(R.id.e3);
+        browse_10.setOnClickListener(this);
+        browse_12.setOnClickListener(this);
+        browse_g.setOnClickListener(this);
+        upload_10.setOnClickListener(this);
+        upload_12.setOnClickListener(this);
+        upload_g.setOnClickListener(this);
+        return view;
+    }
+    public void onClick(View v) {
+        Intent intent = new Intent();
+        switch(v.getId()){
+            case R.id.b_10:
+
                 intent.setType("application/pdf");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
-            }
-        });
-        upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                (new UploadDocs(getActivity(), path)).execute();
 
-            }
-        });
-        return view;
+                upload_10.setVisibility(View.VISIBLE);
+                break;
+            case R.id.b_12:
+
+                intent.setType("application/pdf");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
+
+                upload_12.setVisibility(View.VISIBLE);
+                break;
+            case R.id.b_g:
+
+                intent.setType("application/pdf");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
+                upload_g.setVisibility(View.VISIBLE);
+                break;
+            case R.id.b_10upload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_10.setBackgroundColor(Color.CYAN);
+                upload_10.setText("Update");
+                break;
+            case R.id.b_12upload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_12.setBackgroundColor(Color.CYAN);
+                upload_12.setText("Update");
+                break;
+            case R.id.b_gupload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_g.setBackgroundColor(Color.CYAN);
+                upload_12.setText("Update");
+                break;
+
+        }
+
     }
+
+
+
+
     public void onActivityResult(int requestCode, int resultCode, Intent result) {
         if (resultCode == RESULT_OK) {
             if (requestCode == 1) {
@@ -113,44 +161,7 @@ public class Upload extends Fragment {
         }
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 }
 class UploadDocs extends AsyncTask<Void, Void, Void> {
     private ProgressDialog pd;
