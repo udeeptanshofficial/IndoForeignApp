@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.puff.finalproject.AgentSignUp;
 import com.example.puff.finalproject.R;
 
 public class Selectone extends AppCompatActivity implements View.OnClickListener {
@@ -26,7 +27,8 @@ public class Selectone extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         if(v==btn1)
         {
-
+            Intent i=new Intent(this, AgentSignUp.class);
+            startActivity(i);
         }
         if(v==btn2)
         {

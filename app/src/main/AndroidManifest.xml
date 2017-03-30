@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".student.Login"></activity>
+        <activity android:name=".student.Login" />
         <activity android:name=".student.SignUp" />
         <activity android:name=".student.Qualification" />
         <activity
@@ -29,8 +29,8 @@
             android:name=".student.Prac"
             android:label="@string/title_activity_prac"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".student.Selectone"></activity>
-    
+        <activity android:name=".student.Selectone" />
+        <activity android:name=".AgentSignUp"></activity>
     </application>
 
 </manifest>
