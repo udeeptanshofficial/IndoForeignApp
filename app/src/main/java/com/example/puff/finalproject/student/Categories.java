@@ -3,6 +3,7 @@ package com.example.puff.finalproject.student;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -25,6 +26,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
+import com.example.puff.finalproject.sharedPrefrences.InitializePref;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,7 +52,6 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
     private static final String ARG_PARAM2 = "param2";
 
     final String Category_URL= "https://alishakapoor22895.000webhostapp.com/category.php";
-
 
     // TODO: Rename and change types of parameters
     private String mParam1;
