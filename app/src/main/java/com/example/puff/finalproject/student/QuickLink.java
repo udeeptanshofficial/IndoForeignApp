@@ -4,9 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.puff.finalproject.R;
 
@@ -28,6 +31,8 @@ public class QuickLink extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    TextView ask,scholar,visa,test,loan,vas;
+    String text;
 
     private OnFragmentInteractionListener mListener;
 
@@ -66,7 +71,44 @@ public class QuickLink extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quick_link, container, false);
+        View  view =  inflater.inflate(R.layout.fragment_quick_link, container, false);
+        ask=(TextView)view.findViewById(R.id.t1);
+        //ask.setMovementMethod(LinkMovementMethod.getInstance());
+        ask.setClickable(true);
+        ask.setMovementMethod(LinkMovementMethod.getInstance());
+        text = "<a href='http://www.google.com'> Ask Our Counsellor </a>";
+        ask.setText(Html.fromHtml(text));
+
+        scholar=(TextView)view.findViewById(R.id.t2);
+        scholar.setClickable(true);
+        scholar.setMovementMethod(LinkMovementMethod.getInstance());
+        text = "<a href='http://www.google.com'>Scholarships </a>";
+        scholar.setText(Html.fromHtml(text));
+
+        visa=(TextView)view.findViewById(R.id.t3);
+        visa.setClickable(true);
+        visa.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "<a href='http://www.google.com'>Visa Application</a>";
+        visa.setText(Html.fromHtml(text));
+
+        loan=(TextView)view.findViewById(R.id.t5);
+        loan.setClickable(true);
+        loan.setMovementMethod(LinkMovementMethod.getInstance());
+        text = "<a href='http://www.google.com'>Educational Loans </a>";
+        loan.setText(Html.fromHtml(text));
+
+        test=(TextView)view.findViewById(R.id.t4);
+        test.setClickable(true);
+        test.setMovementMethod(LinkMovementMethod.getInstance());
+        text = "<a href='http://www.google.com'>Standardized Tests </a>";
+        test.setText(Html.fromHtml(text));
+
+        vas=(TextView)view.findViewById(R.id.t6);
+        vas.setClickable(true);
+        vas.setMovementMethod(LinkMovementMethod.getInstance());
+        text = "<a href='http://www.google.com'>Value Added Services </a>";
+        vas.setText(Html.fromHtml(text));
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -11,7 +11,10 @@
         android:layout_height="50dp"
         android:background="@drawable/ask"
         android:textColor="#fff"
-        android:id="@+id/b1"/>
+        android:id="@+id/b1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,8 +24,10 @@
         android:clickable="true"
         android:id="@+id/t1"
         android:textColor="#fff"
-        android:layout_alignBottom="@+id/b1"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginStart="19dp"
+        android:layout_alignTop="@+id/b1"
+        android:layout_toEndOf="@+id/b1"
+        android:layout_marginTop="12dp" />
 
     <ImageButton
         android:layout_width="50dp"
@@ -41,9 +46,9 @@
         android:textSize="20dp"
         android:id="@+id/t2"
         android:textColor="#fff"
-        android:layout_alignBottom="@+id/b2"
-        android:layout_alignLeft="@+id/t1"
-        android:layout_alignStart="@+id/t1" />
+        android:layout_above="@+id/b3"
+        android:layout_alignStart="@+id/t1"
+        android:layout_marginBottom="11dp" />
 
     <ImageButton
         android:layout_width="50dp"
@@ -61,9 +66,9 @@
         android:textSize="20dp"
         android:id="@+id/t3"
         android:textColor="#fff"
-        android:layout_alignBottom="@+id/b3"
-        android:layout_alignLeft="@+id/t2"
-        android:layout_alignStart="@+id/t2" />
+        android:layout_above="@+id/b4"
+        android:layout_alignStart="@+id/t2"
+        android:layout_marginBottom="11dp" />
 
     <ImageButton
         android:layout_width="50dp"
@@ -81,8 +86,7 @@
         android:textSize="20dp"
         android:id="@+id/t4"
         android:textColor="#fff"
-        android:layout_alignBottom="@+id/b4"
-        android:layout_alignLeft="@+id/t3"
+        android:layout_centerVertical="true"
         android:layout_alignStart="@+id/t3" />
 
 
@@ -102,9 +106,9 @@
         android:textSize="20dp"
         android:id="@+id/t5"
         android:textColor="#fff"
-        android:layout_alignBottom="@+id/b5"
-        android:layout_alignLeft="@+id/t4"
-        android:layout_alignStart="@+id/t4" />
+        android:layout_above="@+id/b6"
+        android:layout_alignStart="@+id/t4"
+        android:layout_marginBottom="11dp" />
 
 
     <ImageButton
@@ -123,8 +127,8 @@
         android:textSize="20dp"
         android:id="@+id/t6"
         android:textColor="#fff"
-        android:layout_alignBottom="@+id/b6"
-        android:layout_alignLeft="@+id/t5"
-        android:layout_alignStart="@+id/t5" />
+        android:layout_alignTop="@+id/b6"
+        android:layout_alignStart="@+id/t5"
+        android:layout_marginTop="12dp" />
 
 </RelativeLayout>
