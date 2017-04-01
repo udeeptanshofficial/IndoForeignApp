@@ -14,7 +14,15 @@
         android:id="@+id/t1"
         android:textSize="30dp"/>
 
-    <CheckBox
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogrp"
+        android:layout_below="@+id/t1"
+        android:layout_alignParentStart="true">
+
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/c1"
@@ -23,16 +31,57 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="40dp"
-        android:text="Canada"
         android:textColor="#000" />
 
-    <CheckBox
+    <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/c2"
         android:buttonTint="#fff"
-        android:layout_below="@id/c1"
-        android:text="Australia" />
+        android:layout_below="@id/c1" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/c3"
+        android:buttonTint="#fff"
+        android:layout_below="@+id/c2"
+        android:layout_alignEnd="@+id/t5"
+        android:layout_marginEnd="11dp" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Canada"
+        android:textColor="#fff"
+        android:id="@+id/t2"
+        android:textSize="22dp"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/t1"
+        android:layout_toEndOf="@+id/radiogrp"
+        android:layout_marginStart="23dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Australia"
+        android:textColor="#fff"
+        android:id="@+id/t3"
+        android:textSize="22dp"
+        android:layout_below="@+id/t2"
+        android:layout_alignStart="@+id/t2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Zealand"
+        android:textColor="#fff"
+        android:id="@+id/t4"
+        android:textSize="22dp"
+        android:layout_alignBottom="@+id/radiogrp"
+        android:layout_alignStart="@+id/t3" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,18 +114,6 @@
     </Spinner>
 
 
-    <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@android:id/text1"
-        style="?android:attr/spinnerItemStyle"
-        android:singleLine="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:textSize="18sp"
-        android:textColor="#fff"
-        android:text="[Choose Study Level...]"
-        android:layout_below="@id/e1"/>-->
-
     <Button
         android:text="SUBMIT"
         android:textSize="20dp"
@@ -84,51 +121,10 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:id="@+id/b1"
-        android:layout_marginBottom="41dp"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/t3" />
+        android:layout_centerHorizontal="true" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/c3"
-        android:buttonTint="#fff"
-        android:text="New Zealand"
-        android:layout_below="@+id/c2"
-        android:layout_alignEnd="@+id/t5"
-        android:layout_marginEnd="11dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Zealand"
-        android:textColor="#fff"
-        android:id="@+id/t4"
-        android:textSize="20dp"
-        android:layout_marginStart="48dp"
-        android:layout_alignBottom="@+id/c3"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Australia"
-        android:textColor="#fff"
-        android:id="@+id/t3"
-        android:textSize="20dp"
-        android:layout_above="@+id/c3"
-        android:layout_alignStart="@+id/t4" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Canada"
-        android:textColor="#fff"
-        android:id="@+id/t2"
-        android:textSize="20dp"
-        android:layout_alignBaseline="@+id/c1"
-        android:layout_alignBottom="@+id/c1"
-        android:layout_alignStart="@+id/t3" />
 
     <TextView
         android:id="@+id/textView2"
@@ -137,9 +133,9 @@
         android:text="TextView"
         android:textSize="20dp"
         android:textColor="#fff"
+        android:layout_marginBottom="13dp"
         android:layout_above="@+id/b1"
-        android:layout_alignEnd="@+id/c2"
-        android:layout_marginBottom="34dp" />
+        android:layout_alignEnd="@+id/t5" />
 
 
 </RelativeLayout>

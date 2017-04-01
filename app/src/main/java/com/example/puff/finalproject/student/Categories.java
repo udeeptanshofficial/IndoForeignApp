@@ -16,6 +16,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -56,17 +58,21 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    View view;
+
     Spinner spn;
     ArrayList<String> array1;
     ArrayAdapter adap;
 
-    CheckBox country1,country2,country3;
+    RadioButton country1,country2,country3;
+    RadioGroup radiogp;
+    private RadioButton or3;
 
     EditText course;
 
     Button btn;
 
-
+    private Categories.OnFragmentInteractionListener mListener;
     public Categories()
     {
         // Required empty public constructor
@@ -104,21 +110,17 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View  view =  inflater.inflate(R.layout.fragment_categories, container, false);
+        view =  inflater.inflate(R.layout.fragment_categories, container, false);
 
         btn=(Button)view.findViewById(R.id.b1);
         btn.setOnClickListener(this);
 
-        country1=(CheckBox)view.findViewById(c1);
-        country1.setOnClickListener(this);
-        country2=(CheckBox)view.findViewById(c2);
-        country2.setOnClickListener(this);
-        country3=(CheckBox)view.findViewById(c3);
-        country3.setOnClickListener(this);
+        country1=(RadioButton) view.findViewById(c1);
+        country2=(RadioButton) view.findViewById(c2);
+        country3=(RadioButton) view.findViewById(c3);
+        radiogp=(RadioGroup)view.findViewById(R.id.radiogrp);
 
         course=(EditText)view.findViewById(R.id.e1);
-
-
         spn=(Spinner)view.findViewById(R.id.s1);
         spn.setOnItemSelectedListener(this);
         array1=new ArrayList<>();
@@ -141,10 +143,6 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
 
     }
 
-
-
-
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -155,82 +153,27 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
 
     }
 
-    public void onClick(View view)
+    public void onClick(View v)
     {
-       /* String value,value1,value2,value3,value4;
-        if(country1.isChecked())
+        if(v==btn)
         {
-            value=country1.getText().toString();
-            btn.setText(value);
-        }
+            if(radiogp.getCheckedRadioButtonId() == -1)
+            {
+                Toast.makeText(this.getActivity(), "Select Country", Toast.LENGTH_SHORT).show();
 
-        if(!country1.isChecked())
-        {
-            btn.setText("");
-        }
-
-        if(country2.isChecked())
-        {
-            value=country2.getText().toString();
-            btn.setText(value);
-        }
-        if(country3.isChecked())
-        {
-            value=country3.getText().toString();
-        }
-        if(country1.isChecked()&&country2.isChecked())
-        {
-            value1=country1.getText().toString();
-            value2=country2.getText().toString();
-            value=value1.concat(value2);
-            btn.setText(value);
-        }
-        if(!country1.isChecked()&& !country2.isChecked())
-        {
-            value1=country1.getText().toString();
-            value2=country2.getText().toString();
-            value=value1.concat(value2);
-            btn.setText("");
-
-        }
-        if(country1.isChecked()&&country2.isChecked()&&country3.isChecked())
-        {
-            value1=country1.getText().toString();
-            value2=country2.getText().toString();
-            value3=country3.getText().toString();
-            value4=value1.concat(value2);
-            value=value3.concat(value4);
-        }
-        if(country1.isChecked()&&country3.isChecked())
-        {
-            value1=country1.getText().toString();
-            value2=country3.getText().toString();
-            value=value1.concat(value2);
-        }
-        if(country2.isChecked()&&country3.isChecked())
-        {
-            value1=country2.getText().toString();
-            value2=country3.getText().toString();
-            value=value1.concat(value2);
-        }*/
-        if(view==btn)
-        {
+                return;
+            }
             categoryEntry();
         }
     }
     public void categoryEntry()
     {
-       // if(isInvalid())
-        //{
-         //   return;
-        //}
-        //final String count1=country1.getText().toString();
-        //final String count2=country2.getText().toString();
-        //final String count3=country3.getText().toString();
         final String courses=course.getText().toString();
         final String spnr=spn.getSelectedItem().toString();
-
-
+        final String getName;
+        int SelectedId=radiogp.getCheckedRadioButtonId();
+        or3=(RadioButton)view.findViewById(SelectedId);
+        final String getCountry=or3.getText().toString();
         StringRequest stringRequest;
         final ProgressDialog loading = ProgressDialog.show(this.getActivity(), "Please Wait.....", "Response Submit", false, false);
         stringRequest = new StringRequest(Request.Method.POST, Category_URL,
@@ -240,7 +183,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
                         Log.d("DataBase Response", response);
                         if (response.equals("success")) {
                             loading.dismiss();
-                            //Toast.makeText(getApplicationContext(), "User Registration Success....", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Success....", Toast.LENGTH_LONG).show();
                             Intent intent = new Intent(getActivity(), MainDrawer.class);
                             startActivity(intent);
                         } else {
@@ -260,7 +203,8 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-               // params.put("country", country);
+                //params.put("student",getName);
+                params.put("country", getCountry);
                 params.put("course", courses);
                 params.put("study_level", spnr);
                 return params;
@@ -272,19 +216,6 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
         requestQueue.add(stringRequest);
     }
 
-   /* public boolean isInvalid()
-    {
-        String getCountry1=country1.getText().toString();
-        String getCountry2=country2.getText().toString();
-        String getCountry3=country3.getText().toString();
-        String getCourse=course.getText().toString();
-        String getSpinner=spn.getSelectedItem().toString();
-        if(getCountry1.isEmpty()||getCountry2.isEmpty()||getCountry3.isEmpty())
-        {
-            country1.setError("Choose any country");
-        }
-        return false;
-
-    }*/
-
+    public interface OnFragmentInteractionListener {
+    }
 }

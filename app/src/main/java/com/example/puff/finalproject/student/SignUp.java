@@ -144,7 +144,6 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
 
         int SelectedId=radioGroup.getCheckedRadioButtonId();
         or3=(RadioButton)findViewById(SelectedId);
-
         final String getGender=or3.getText().toString();
         final String rdoMale=or1.getText().toString();
         final String rdoFeMale=or2.getText().toString();
