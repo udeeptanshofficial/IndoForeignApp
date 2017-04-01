@@ -63,11 +63,6 @@ public class MainDrawer extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.about) {
-            //return true;
-            this.finish();
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -84,7 +79,8 @@ public class MainDrawer extends AppCompatActivity
 
         } else if (id == R.id.nav_links) {
             getFragmentManager().beginTransaction().replace(R.id.content_main_drawer,new QuickLink()).addToBackStack(null).commit();
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_about) {
+            getFragmentManager().beginTransaction().replace(R.id.content_main_drawer,new AboutUs()).addToBackStack(null).commit();
 
         } else if (id == R.id.nav_share) {
 

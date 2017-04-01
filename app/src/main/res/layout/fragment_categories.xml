@@ -48,7 +48,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your course/subject"
+        android:hint="Engineering /MBA /Medical"
         android:textColor="#fff"
         android:textColorHint="#fff"
         android:layout_below="@id/t5"
@@ -84,10 +84,9 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:id="@+id/b1"
+        android:layout_marginBottom="41dp"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/t3"
-        android:layout_toEndOf="@+id/t3"
-        android:layout_marginBottom="58dp" />
+        android:layout_toEndOf="@+id/t3" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -130,6 +129,17 @@
         android:layout_alignBaseline="@+id/c1"
         android:layout_alignBottom="@+id/c1"
         android:layout_alignStart="@+id/t3" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:layout_above="@+id/b1"
+        android:layout_alignEnd="@+id/c2"
+        android:layout_marginBottom="34dp" />
 
 
 </RelativeLayout>

@@ -157,7 +157,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
 
     public void onClick(View view)
     {
-        String value,value1,value2,value3,value4;
+       /* String value,value1,value2,value3,value4;
         if(country1.isChecked())
         {
             value=country1.getText().toString();
@@ -212,7 +212,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
             value1=country2.getText().toString();
             value2=country3.getText().toString();
             value=value1.concat(value2);
-        }
+        }*/
         if(view==btn)
         {
             categoryEntry();
