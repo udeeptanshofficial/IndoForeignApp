@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/c1"
+    tools:context="com.example.puff.finalproject.student.Categories">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Country Preference"
+        android:textColor="#fff"
+        android:id="@+id/t1"
+        android:textSize="30dp"/>
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogrp"
+        android:layout_below="@+id/t1"
+        android:layout_alignParentStart="true">
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/c1"
+        android:buttonTint="#fff"
+        android:layout_below="@+id/t1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:textColor="#000" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/c2"
+        android:buttonTint="#fff"
+        android:layout_below="@id/c1" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/c3"
+        android:buttonTint="#fff"
+        android:layout_below="@+id/c2"
+        android:layout_alignEnd="@+id/t5"
+        android:layout_marginEnd="11dp" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Canada"
+        android:textColor="#fff"
+        android:id="@+id/t2"
+        android:textSize="22dp"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/t1"
+        android:layout_toEndOf="@+id/radiogrp"
+        android:layout_marginStart="23dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Australia"
+        android:textColor="#fff"
+        android:id="@+id/t3"
+        android:textSize="22dp"
+        android:layout_below="@+id/t2"
+        android:layout_alignStart="@+id/t2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Zealand"
+        android:textColor="#fff"
+        android:id="@+id/t4"
+        android:textSize="22dp"
+        android:layout_alignBottom="@+id/radiogrp"
+        android:layout_alignStart="@+id/t3" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Courses"
+        android:textColor="#fff"
+        android:id="@+id/t5"
+        android:textSize="30dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Engineering /MBA /Medical"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:layout_below="@id/t5"
+        android:id="@+id/e1"/>
+
+   <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/s1"
+        android:layout_below="@id/e1"
+        android:layout_alignParentLeft="true"
+        android:backgroundTint="#fff"
+        android:layout_alignParentStart="true">
+    </Spinner>
+
+
+    <Button
+        android:text="SUBMIT"
+        android:textSize="20dp"
+        android:onClick="onClick"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/b1"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:layout_marginBottom="13dp"
+        android:layout_above="@+id/b1"
+        android:layout_alignEnd="@+id/t5" />
+
+
+</RelativeLayout>

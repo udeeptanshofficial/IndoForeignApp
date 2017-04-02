@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mains"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fc9351"
+    tools:context="com.example.puff.finalproject.student.Selectone"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/t1"
+        android:text="Select your type to proceed"
+        android:textStyle="bold"
+        android:textSize="22sp" />
+
+    <Button
+        android:text="Counsellor"
+        android:textSize="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:background="#c62828"
+        android:id="@+id/button2"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/img1"
+        android:layout_toStartOf="@+id/img2" />
+
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="190dp"
+        android:id="@+id/img1"
+        app:srcCompat="@drawable/agent"
+        android:layout_weight="0.30"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="20dp"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Student"
+        android:textSize="18dp"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="21dp"
+        android:background="#c62828"
+        android:id="@+id/button3"
+        android:layout_below="@+id/img1"
+        android:layout_alignStart="@+id/img2" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ind"
+        android:id="@+id/img3"
+        android:layout_below="@+id/button2"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="190dp"
+        android:id="@+id/img2"
+        app:srcCompat="@drawable/student"
+        android:layout_weight="0.30"
+        android:layout_marginRight="23dp"
+        android:layout_marginStart="33dp"
+        android:layout_above="@+id/button3"
+        android:layout_toEndOf="@+id/img1" />
+
+</RelativeLayout>

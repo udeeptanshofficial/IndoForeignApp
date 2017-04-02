@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/backg"
+    tools:context="com.example.puff.finalproject.student.Login"
+    android:alpha="0.9">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/t1"
+        android:text="Talk to Agents and study where you want to study"
+        android:textColor="#fff"
+        android:textSize="25dp"
+        />
+
+    <Button
+        android:text="SIGN UP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#fff"
+        android:background="#0277BD"/>
+
+    <LinearLayout
+         android:id="@+id/login_form"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+        android:weightSum="1"
+        android:layout_below="@+id/t2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp">
+
+
+
+           <EditText
+               android:id="@+id/e1"
+               android:layout_width="match_parent"
+               android:layout_height="43dp"
+               android:hint="Enter Email"
+               android:textColor="#000"
+               android:background="#F5F5F5"
+               android:alpha="0.5"
+               android:inputType="textEmailAddress"
+               android:layout_marginBottom="12dp"
+               android:maxLines="1" />
+
+
+
+            <EditText
+                android:id="@+id/e2"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:hint="Enter Password"
+                android:textColor="#000"
+                android:background="#F5F5F5"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:alpha="0.5"
+                android:maxLines="1" />
+
+
+         <Button
+             android:id="@+id/b1"
+             style="?android:textAppearanceSmall"
+             android:layout_width="match_parent"
+             android:layout_height="35dp"
+             android:layout_marginTop="16dp"
+             android:textStyle="bold"
+             android:textColor="#fff"
+             android:background="#EF6C00"
+             android:text="LOGIN"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/t3"
+            android:text="Forgot Password?"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:clickable="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="54dp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/t2"
+        android:text="Shaping students lives and carrers"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/t1"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
