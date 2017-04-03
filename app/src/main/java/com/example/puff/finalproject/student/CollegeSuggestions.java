@@ -23,7 +23,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static android.app.ProgressDialog.show;
 
@@ -89,7 +88,11 @@ public class CollegeSuggestions extends AppCompatActivity {
                                 public void onItemClick(int position, View v) {
                                     Log.i(LOG_TAG, " Clicked on Item " + position);
                                     Intent intent  = new Intent(CollegeSuggestions.this,CollegeDetails.class) ;
-                                    startActivity(intent);
+                                    try{
+                                    String clg_name = collegeArray.getJSONObject(position).getString("college_name");
+                                    intent.putExtra("College",clg_name);
+                                    startActivity(intent);}
+                                    catch(Exception e){}
                                 }
                             });
                         }

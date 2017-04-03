@@ -32,7 +32,8 @@
         <activity android:name=".student.Selectone" />
         <activity android:name=".AgentSignUp" />
         <activity android:name=".student.CollegeSuggestions" />
-        <activity android:name=".student.CollegeDetails"></activity>
+        <activity android:name=".student.CollegeDetails" />
+        <activity android:name=".student.AgentDetails"></activity>
     </application>
 
 </manifest>
