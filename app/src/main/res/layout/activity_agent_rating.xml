@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.puff.finalproject.student.AgentRating">
+    <TextView
+        android:id="@+id/txt_static"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <AutoCompleteTextView
+        android:id="@+id/txt_auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_static"
+        android:layout_alignParentStart="true"
+        android:layout_margin="80dp"
+        android:hint="Agent Name"/>
+    <android.support.v7.widget.AppCompatRatingBar
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/txt_auto"
+        android:layout_centerHorizontal="true" />
+    <EditText
+        android:id="@+id/txt_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rating"
+        android:layout_margin="10dp"
+        android:hint="Reviews"/>
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_review"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Submit"
+        android:onClick="submit"/>
+
+</RelativeLayout>

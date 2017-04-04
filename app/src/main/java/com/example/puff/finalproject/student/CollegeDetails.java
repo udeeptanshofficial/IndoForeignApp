@@ -75,7 +75,12 @@ public class CollegeDetails extends AppCompatActivity {
                         .into(clg_image);}
         }
         catch(Exception e){}
-
+        String course_list="";
+        for(int i=0;i<courseArray.length();i++){
+            try{
+            course_list = course_list+courseArray.get(i)+" ";}catch(Exception e){}
+        }
+        courses.setText(course_list);
 
     }
    private ArrayList<AgentModel> getDataSet()  {
@@ -110,7 +115,8 @@ public class CollegeDetails extends AppCompatActivity {
                             @Override
                             public void onItemClick(int position, View v) {
                                 Intent intent = new Intent(CollegeDetails.this,AgentDetails.class);
-                                //intent.putExtra("Agent Name",);
+                                try{
+                                intent.putExtra("Agent",agents.getJSONObject(position).getString("agent_name"));}catch(Exception e){}
                                 startActivity(intent);
                             }
                         });
