@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/c1"
+    android:background="@drawable/redbg"
     tools:context="com.example.puff.finalproject.student.Upload">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="10th"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:id="@+id/t1"
         android:textSize="30dp"/>
 
@@ -18,10 +18,10 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:hint="Enter file name"
-    android:textColor="#fff"
+    android:textColor="#000"
         android:id="@+id/e1"
         android:layout_below="@id/t1"
-    android:textColorHint="#fff" />
+    android:textColorHint="#000" />
 
     <Button
         android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="12th"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:id="@+id/t2"
         android:textSize="30dp"
         android:layout_below="@+id/b_10"
@@ -47,10 +47,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter file name"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:id="@+id/e2"
         android:layout_below="@id/t2"
-        android:textColorHint="#fff" />
+        android:textColorHint="#000" />
 
     <Button
         android:layout_width="wrap_content"
@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Graduation"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:id="@+id/t3"
         android:textSize="30dp"
         android:layout_below="@id/e2"
@@ -85,10 +85,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter file name"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:id="@+id/e3"
         android:layout_below="@id/t3"
-        android:textColorHint="#fff" />
+        android:textColorHint="#000" />
 
     <Button
         android:layout_width="wrap_content"

@@ -92,6 +92,11 @@ public class MainDrawer extends AppCompatActivity
             loginscreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(loginscreen);
         }
+        else if(id == R.id.nav_home)
+        {
+            Intent i=new Intent(this,MainDrawer.class);
+            startActivity(i);
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

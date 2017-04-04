@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/c1"
+    android:background="@drawable/redbg"
     tools:context="com.example.puff.finalproject.student.AboutUs">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/t1"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:textSize="25dp"
         android:text="This app is to automate the process of application for colleges in other countries via agents. We are providing an interface to agents where they can setup their accounts on app and provide services online and on client side students can register and apply for admission process. This app will help in reducing extra efforts of students"/>
 

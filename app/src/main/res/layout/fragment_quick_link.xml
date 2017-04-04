@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/c1"
+    android:background="#263238"
     tools:context="com.example.puff.finalproject.student.QuickLink">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,7 +10,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/ask"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:id="@+id/b1"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -23,7 +23,7 @@
         android:textSize="20dp"
         android:clickable="true"
         android:id="@+id/t1"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_marginStart="19dp"
         android:layout_alignTop="@+id/b1"
         android:layout_toEndOf="@+id/b1"
@@ -45,7 +45,7 @@
         android:clickable="true"
         android:textSize="20dp"
         android:id="@+id/t2"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_above="@+id/b3"
         android:layout_alignStart="@+id/t1"
         android:layout_marginBottom="11dp" />
@@ -65,7 +65,7 @@
         android:clickable="true"
         android:textSize="20dp"
         android:id="@+id/t3"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_above="@+id/b4"
         android:layout_alignStart="@+id/t2"
         android:layout_marginBottom="11dp" />
@@ -85,7 +85,7 @@
         android:clickable="true"
         android:textSize="20dp"
         android:id="@+id/t4"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_centerVertical="true"
         android:layout_alignStart="@+id/t3" />
 
@@ -105,7 +105,7 @@
         android:clickable="true"
         android:textSize="20dp"
         android:id="@+id/t5"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_above="@+id/b6"
         android:layout_alignStart="@+id/t4"
         android:layout_marginBottom="11dp" />
@@ -126,7 +126,7 @@
         android:clickable="true"
         android:textSize="20dp"
         android:id="@+id/t6"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_alignTop="@+id/b6"
         android:layout_alignStart="@+id/t5"
         android:layout_marginTop="12dp" />

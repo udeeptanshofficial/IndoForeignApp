@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/c1"
+    android:background="@drawable/backg"
+    android:alpha="0.9"
     tools:context="com.example.puff.finalproject.student.Qualification">
 
 <TextView
@@ -16,7 +17,7 @@
     android:text="Employment type"
     android:textSize="25dp"
     android:id="@+id/t1"
-    android:textColor="#fff"
+    android:textColor="#000"
     android:layout_alignTop="@+id/s"
     android:layout_alignParentLeft="true"
     android:layout_marginRight="28dp"
@@ -37,7 +38,7 @@
         android:id="@+id/t2"
         android:text="Qualification"
         android:textSize="25dp"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_marginRight="70dp"
         android:layout_marginTop="22dp"
         android:layout_below="@+id/s"
@@ -81,7 +82,7 @@
         android:text="Intake year"
         android:textSize="25dp"
         android:layout_marginTop="20dp"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_below="@+id/s2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -102,7 +103,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/t5"
         android:text="Nearest Branch"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:textSize="25dp"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/s3"
@@ -128,7 +129,7 @@
         android:text="State"
         android:textSize="25dp"
         android:layout_marginTop="26dp"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:layout_below="@+id/t2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

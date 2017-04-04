@@ -11,42 +11,48 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.puff.finalproject.student.MainDrawer"
-    android:background="@drawable/c1"
+    android:background="@drawable/redbg"
     tools:showIn="@layout/app_bar_main_drawer">
-    <ImageButton
-        android:id="@+id/btn_suggest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/btn_topSearches"
-        android:onClick="suggestCollege"/>
-    <ImageButton
-        android:id="@+id/btn_request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/btn_rateAgent"
-        android:onClick="requestStatus"/>
-    <ImageButton
-        android:id="@+id/btn_topSearches"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/btn_rateAgent"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="17dp"
-        android:onClick="topSearches"/>
-    <ImageButton
-        android:id="@+id/btn_rateAgent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher"
-        android:layout_below="@+id/btn_suggest"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="77dp"
-        android:onClick="rateAgent"/>
+
+        <ImageButton
+            android:id="@+id/btn_suggest"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/img4"
+            android:onClick="suggestCollege"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+
+        <ImageButton
+            android:id="@+id/btn_request"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/img"
+            android:onClick="requestStatus"
+            android:layout_alignTop="@+id/btn_suggest"
+            android:layout_alignStart="@+id/btn_rateAgent" />
+
+        <ImageButton
+            android:id="@+id/btn_topSearches"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/img2"
+            android:onClick="topSearches"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/btn_suggest"
+            android:layout_alignStart="@+id/btn_suggest" />
+
+        <ImageButton
+            android:id="@+id/btn_rateAgent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/img1"
+            android:onClick="rateAgent"
+            android:layout_marginStart="56dp"
+            android:layout_alignTop="@+id/btn_topSearches"
+            android:layout_toEndOf="@+id/btn_topSearches" />
 
 </RelativeLayout>

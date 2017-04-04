@@ -129,7 +129,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
         array1.add("Diploma");
         array1.add("[Choose Study Level]");
         final int listsize = array1.size() - 1;
-        adap=new ArrayAdapter<String>(this.getActivity(),R.layout.spinner_item,array1)
+        adap=new ArrayAdapter<String>(this.getActivity(),R.layout.spinner1_item,array1)
         {
             @Override
             public int getCount() {
