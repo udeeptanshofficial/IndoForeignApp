@@ -1,7 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@drawable/redbg"
     tools:context="com.example.puff.finalproject.student.Upload">
 
@@ -28,9 +31,9 @@
         android:layout_height="wrap_content"
         android:text="Browse"
         android:id="@+id/b_10"
-        android:layout_alignTop="@+id/e1"
         android:layout_toEndOf="@+id/e1"
-        android:layout_marginStart="20dp" />
+        android:layout_marginStart="20dp"
+        android:layout_alignTop="@+id/e1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,6 +55,44 @@
         android:layout_below="@id/t2"
         android:textColorHint="#000" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diploma"
+        android:textColor="#000"
+        android:id="@+id/t4"
+        android:textSize="30dp"
+        android:layout_below="@id/e2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter file name"
+        android:textColor="#000"
+        android:id="@+id/e4"
+        android:layout_below="@id/t4"
+        android:textColorHint="#000" />
+
+     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Browse"
+        android:id="@+id/b_dip"
+         android:layout_above="@+id/t3"
+         android:layout_toEndOf="@+id/t3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:id="@+id/b_dipupload"
+        android:layout_alignBaseline="@+id/b_12"
+        android:layout_alignBottom="@+id/b_12"
+        android:layout_alignStart="@+id/b_10upload"
+        android:visibility="invisible"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,10 +106,10 @@
         android:layout_height="wrap_content"
         android:text="Upload"
         android:id="@+id/b_12upload"
-        android:layout_alignBaseline="@+id/b_12"
-        android:layout_alignBottom="@+id/b_12"
-        android:layout_alignStart="@+id/b_10upload"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:layout_alignBaseline="@+id/e4"
+        android:layout_alignBottom="@+id/e4"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,9 +118,9 @@
         android:textColor="#000"
         android:id="@+id/t3"
         android:textSize="30dp"
-        android:layout_below="@id/e2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="27dp"
+        android:layout_below="@+id/b_12upload"
+        android:layout_toStartOf="@+id/b_12" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -105,9 +146,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/b_g"
         android:text="Browse"
-        android:layout_alignBaseline="@+id/e3"
-        android:layout_alignBottom="@+id/e3"
-        android:layout_alignStart="@+id/b_12" />
+        android:layout_toEndOf="@+id/t3"
+        android:layout_alignBottom="@+id/e3" />
 
     <Button
         android:layout_width="wrap_content"
@@ -120,4 +160,232 @@
         android:visibility="invisible"/>
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post Graduation"
+        android:textColor="#000"
+        android:id="@+id/t5"
+        android:textSize="30dp"
+        android:layout_below="@+id/e3"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter file name"
+        android:textColor="#000"
+        android:id="@+id/e5"
+        android:layout_below="@id/t5"
+        android:textColorHint="#000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:id="@+id/b_postupload"
+        android:visibility="invisible"
+        android:layout_alignBottom="@+id/e5"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_postgrad"
+        android:text="Browse"
+        android:layout_below="@+id/t5"
+        android:layout_alignStart="@+id/b_g" />
+
+
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Score Card"
+        android:textColor="#000"
+        android:id="@+id/t6"
+        android:textSize="30dp"
+        android:layout_below="@+id/e5"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter file name"
+        android:textColor="#000"
+        android:id="@+id/e6"
+        android:layout_below="@id/t6"
+        android:textColorHint="#000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:id="@+id/b_scoreupload"
+        android:visibility="invisible"
+        android:layout_alignBaseline="@+id/e6"
+        android:layout_alignBottom="@+id/e6"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_score"
+        android:text="Browse"
+        android:layout_below="@+id/t6"
+        android:layout_alignStart="@+id/b_postgrad" />
+
+
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adhar Card"
+        android:textColor="#000"
+        android:id="@+id/t7"
+        android:textSize="30dp"
+        android:layout_below="@+id/e6"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter file name"
+        android:textColor="#000"
+        android:id="@+id/e7"
+        android:layout_below="@id/t7"
+        android:textColorHint="#000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:id="@+id/b_adharupload"
+        android:visibility="invisible"
+        android:layout_below="@+id/t7"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_adhar"
+        android:text="Browse"
+        android:layout_alignBaseline="@+id/e7"
+        android:layout_alignBottom="@+id/e7"
+        android:layout_toEndOf="@+id/t7" />
+
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pan Card"
+        android:textColor="#000"
+        android:id="@+id/t8"
+        android:textSize="30dp"
+        android:layout_below="@id/e7"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter file name"
+        android:textColor="#000"
+        android:id="@+id/e8"
+        android:layout_below="@id/t8"
+        android:textColorHint="#000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:id="@+id/b_panupload"
+        android:visibility="invisible"
+        android:layout_alignBottom="@+id/b_pan"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/e8" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_pan"
+        android:text="Browse"
+        android:layout_alignBottom="@+id/e8"
+        android:layout_alignStart="@+id/b_adhar" />
+
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Passport"
+        android:textColor="#000"
+        android:id="@+id/t9"
+        android:textSize="30dp"
+        android:layout_below="@id/e8"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter file name"
+        android:textColor="#000"
+        android:id="@+id/e9"
+        android:layout_below="@id/t9"
+        android:textColorHint="#000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:id="@+id/b_passupload"
+        android:visibility="invisible"
+        android:layout_alignBottom="@+id/b_passport"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_passport"
+        android:text="Browse"
+        android:layout_alignBottom="@+id/e9"
+        android:layout_toEndOf="@+id/t6" />
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Visa "
+        android:textColor="#000"
+        android:id="@+id/t0"
+        android:textSize="30dp"
+          android:layout_marginTop="18dp"
+          android:layout_below="@+id/e9"
+          android:layout_alignStart="@+id/t3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter file name"
+        android:textColor="#000"
+        android:id="@+id/e10"
+        android:layout_below="@id/t0"
+        android:textColorHint="#000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        android:id="@+id/b_visaupload"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_visa"
+        android:text="Browse"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/b_pan" />
 </RelativeLayout>
+
+</ScrollView>
