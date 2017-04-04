@@ -114,7 +114,8 @@ public class MainDrawer extends AppCompatActivity
 
     }
     public void rateAgent(View view){
-
+        intent = new Intent(this,AgentRating.class);
+        startActivity(intent);
     }
 
 }
