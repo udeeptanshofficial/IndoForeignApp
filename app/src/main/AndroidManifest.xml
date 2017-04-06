@@ -37,7 +37,11 @@
         <activity android:name=".agent.UpdateStatus" />
         <activity android:name=".student.AgentRating" />
         <activity android:name=".student.TrackApplication" />
-        <activity android:name=".student.ApplicationList"></activity>
+        <activity android:name=".student.ApplicationList"/>
+        <activity android:name=".agent.LPAgent" />
+        <activity android:name=".agent.NewStudent" />
+        <activity android:name=".agent.StudentList" />
+        <activity android:name=".agent.ViewDocument" />
     </application>
 
 </manifest>

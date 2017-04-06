@@ -19,9 +19,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
+import com.example.puff.finalproject.agent.LPAgent;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.jar.JarException;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
     private int backpress;
@@ -30,7 +35,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText oe1, oe2;
     TextView ot1, ot2, ot3;
 
-    final String Login_URL = "https://alishakapoor22895.000webhostapp.com/login.php";
+    final String Login_URL = "https://alishakapoor22895.000webhostapp.com/loginNew.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,18 +77,28 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onResponse(String response) {
                 Log.d("Alisha", "response" + response);
-                //Toast.makeText(Login.this, "Response", Toast.LENGTH_SHORT).show();
-                if (response.equals("success")) {
-                    Toast.makeText(Login.this, "Success", Toast.LENGTH_SHORT).show();
+                try{
+                    JSONArray array = new JSONArray(response);
+                    String status = array.getString(1);
+                    String role = array.getString(2);
 
+                    if(status.equals("success") && role.equals("agent")){
+                        Intent intent = new Intent(Login.this,LPAgent.class);
+                        startActivity(intent);
+                    }
+                    else if(status.equals("success") && role.equals("student")){
+                        Intent intent = new Intent(Login.this,MainDrawer.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(Login.this,"Invalid Credentials....",Toast.LENGTH_LONG).show();
+                    }
                     loading.dismiss();
-                    Intent i = new Intent(Login.this, MainDrawer.class);
-                    startActivity(i);
-                } else
-                {
-                    Toast.makeText(Login.this, "Incorrect Email/Password", Toast.LENGTH_SHORT).show();
-                    loading.dismiss();
-                }
+                }catch(JSONException e){}
+
+
+
+
 
 
             }
