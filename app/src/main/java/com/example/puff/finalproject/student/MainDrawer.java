@@ -108,7 +108,8 @@ public class MainDrawer extends AppCompatActivity
 
     }
     public void requestStatus(View view){
-
+        intent = new Intent(this,TrackApplication.class);
+        startActivity(intent);
     }
     public void topSearches(View view){
 

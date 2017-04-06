@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -22,6 +23,7 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -29,6 +31,8 @@ public class AgentDetails extends AppCompatActivity {
     String agent_name;
     ImageView logo;
     TextView name,about,address;
+    ListView listView;
+    JSONArray rating;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,8 @@ public class AgentDetails extends AppCompatActivity {
         name = (TextView) findViewById(R.id.txt_agentname);
         about = (TextView) findViewById(R.id.txt_agentinfo);
         address = (TextView) findViewById(R.id.txt_address);
+        listView = (ListView) findViewById(R.id.list_view);
+
 
     }
     public void getDetails(){
@@ -49,6 +55,8 @@ public class AgentDetails extends AppCompatActivity {
                     public void onResponse(String s) {
                         Log.d("TAG", "onResponse: "+s);
                         processResponse(s);
+                        RatingAdapter ratingAdapter = new RatingAdapter(AgentDetails.this,R.layout.rating_list,setRating());
+                        listView.setAdapter(ratingAdapter);
 
                     }
                 },
@@ -81,6 +89,7 @@ public class AgentDetails extends AppCompatActivity {
         try {
             JSONObject jsonObject = new JSONObject(s);
             JSONArray jsonArray =  jsonObject.getJSONArray("agent");
+            rating = jsonObject.getJSONArray("ratings");
             JSONObject temp = jsonArray.getJSONObject(0);
             String image_url =  temp.getString("logo");
             if(image_url.equals("")){
@@ -100,5 +109,18 @@ public class AgentDetails extends AppCompatActivity {
         }catch(Exception e){
 
         }
+    }
+    public ArrayList<RatingModel> setRating(){
+      ArrayList ratings = new ArrayList<RatingModel>();
+        try{
+        for(int index=0;index<rating.length();index++){
+
+            JSONObject json_object = rating.getJSONObject(index);
+            RatingModel obj = new RatingModel(json_object.getString("student_name"),json_object.getString("rating"),json_object.getString("review"));
+                Log.d("TAG", "setRating: "+obj);
+                ratings.add(index,obj);}
+
+        }catch(Exception e){}
+        return ratings;
     }
 }

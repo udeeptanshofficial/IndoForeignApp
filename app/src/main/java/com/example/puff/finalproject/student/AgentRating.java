@@ -49,8 +49,11 @@ public class AgentRating extends AppCompatActivity {
 
     }
     public void submit(View view){
+        final String student = "ALisha Kapoor";    //replace with shared.getname
         final Float value = rate.getRating();
+        final String rating = String.valueOf(value);
         final String text = review.getText().toString();
+        final String agent = auto_text.getText().toString();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://alishakapoor22895.000webhostapp.com/student/rating.php",
                 new Response.Listener<String>() {
                     @Override
@@ -67,7 +70,9 @@ public class AgentRating extends AppCompatActivity {
                 }){
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> map = new HashMap<>();
-                //map.put()
+                map.put("student_name",student);
+                map.put("agent_name",agent);
+                map.put("rating",rating);
                 map.put("review", text);
                 return map;
             }

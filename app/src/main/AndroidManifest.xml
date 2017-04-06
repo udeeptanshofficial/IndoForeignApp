@@ -34,7 +34,10 @@
         <activity android:name=".student.CollegeSuggestions" />
         <activity android:name=".student.CollegeDetails" />
         <activity android:name=".student.AgentDetails" />
-        <activity android:name=".student.AgentRating"></activity>
+        <activity android:name=".agent.UpdateStatus" />
+        <activity android:name=".student.AgentRating" />
+        <activity android:name=".student.TrackApplication" />
+        <activity android:name=".student.ApplicationList"></activity>
     </application>
 
 </manifest>

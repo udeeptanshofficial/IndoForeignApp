@@ -12,11 +12,13 @@
         android:layout_gravity="center"
         android:layout_margin="5dp"
         card_view:cardCornerRadius="20dp"
-        card_view:contentPadding="10dp">
+        card_view:contentPadding="10dp"
+        >
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="363dp"
+            >
 
             <TextView
                 android:id="@+id/txt_clgName"
@@ -68,5 +70,5 @@
 
 </LinearLayout>
 
-    
+
 
