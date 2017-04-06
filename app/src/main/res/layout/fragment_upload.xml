@@ -83,17 +83,7 @@
          android:layout_above="@+id/t3"
          android:layout_toEndOf="@+id/t3" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload"
-        android:id="@+id/b_dipupload"
-        android:layout_alignBaseline="@+id/b_12"
-        android:layout_alignBottom="@+id/b_12"
-        android:layout_alignStart="@+id/b_10upload"
-        android:visibility="invisible"/>
-
-    <Button
+        <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Browse"
@@ -105,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upload"
-        android:id="@+id/b_12upload"
+        android:id="@+id/b_dipupload"
         android:visibility="invisible"
         android:layout_alignBaseline="@+id/e4"
         android:layout_alignBottom="@+id/e4"
@@ -119,7 +109,7 @@
         android:id="@+id/t3"
         android:textSize="30dp"
         android:layout_marginTop="27dp"
-        android:layout_below="@+id/b_12upload"
+        android:layout_below="@+id/b_dipupload"
         android:layout_toStartOf="@+id/b_12" />
 
     <EditText
@@ -386,6 +376,18 @@
         android:text="Browse"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/b_pan" />
-</RelativeLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b_12uploadn"
+            android:text="Upload"
+            android:visibility="invisible"
+            android:layout_alignBaseline="@+id/e2"
+            android:layout_alignBottom="@+id/e2"
+            android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
 
 </ScrollView>

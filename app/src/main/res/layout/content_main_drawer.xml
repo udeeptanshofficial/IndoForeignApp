@@ -16,19 +16,19 @@
 
         <ImageButton
             android:id="@+id/btn_suggest"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:background="@drawable/img4"
             android:onClick="suggestCollege"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="48dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="22dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true" />
 
 
         <ImageButton
             android:id="@+id/btn_request"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:background="@drawable/img"
             android:onClick="requestStatus"
@@ -37,7 +37,7 @@
 
         <ImageButton
             android:id="@+id/btn_topSearches"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:background="@drawable/img2"
             android:onClick="topSearches"
@@ -47,12 +47,56 @@
 
         <ImageButton
             android:id="@+id/btn_rateAgent"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="100dp"
             android:background="@drawable/img1"
             android:onClick="rateAgent"
             android:layout_marginStart="56dp"
             android:layout_alignTop="@+id/btn_topSearches"
             android:layout_toEndOf="@+id/btn_topSearches" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Suggestions"
+            android:background="#000"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:layout_below="@+id/btn_suggest"
+            android:layout_alignEnd="@+id/btn_suggest" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_request"
+            android:layout_below="@+id/btn_request"
+            android:text="Request"
+            android:background="#000"
+            android:textColor="#fff"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_topSearches"
+            android:layout_below="@+id/btn_topSearches"
+            android:text="Search"
+            android:background="#000"
+            android:textColor="#fff"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_rateAgent"
+            android:layout_below="@+id/btn_rateAgent"
+            android:text="Ratings"
+            android:background="#000"
+            android:textColor="#fff"
+            android:textSize="20dp"/>
 
 </RelativeLayout>

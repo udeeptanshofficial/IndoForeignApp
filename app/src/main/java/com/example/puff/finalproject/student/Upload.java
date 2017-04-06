@@ -80,8 +80,8 @@ public class Upload extends Fragment implements View.OnClickListener{
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-    EditText et10,et12,etg;
-    Button browse_10,browse_12,browse_g,upload_10,upload_12,upload_g;
+    EditText et10,et12,etg,et1,et2,et3,et5,et6,et7,et8,et9;
+    Button browse_10,browse_12,browse_g,upload_10,upload_12,upload_g,browse_dip,upload_dip,browse_pgrad,upload_pgrad,browse_score,upload_score,browse_adhar,upload_adhar,browse_pan,upload_pan,browse_passport,upload_passport,browse_visa,upload_visa;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -90,23 +90,59 @@ public class Upload extends Fragment implements View.OnClickListener{
         browse_10 = (Button) view.findViewById(R.id.b_10);
         browse_12 = (Button) view.findViewById(R.id.b_12);
         browse_g = (Button) view.findViewById(R.id.b_g);
+        browse_dip=(Button)view.findViewById(R.id.b_dip);
+        browse_pgrad=(Button)view.findViewById(R.id.b_postgrad);
+        browse_score=(Button)view.findViewById(R.id.b_score);
+        browse_adhar=(Button)view.findViewById(R.id.b_adhar);
+        browse_pan=(Button)view.findViewById(R.id.b_pan);
+        browse_passport=(Button)view.findViewById(R.id.b_passport);
+        browse_visa=(Button)view.findViewById(R.id.b_visa);
         upload_10 = (Button) view.findViewById(R.id.b_10upload);
-        upload_12 = (Button) view.findViewById(R.id.b_12upload);
+        upload_12 = (Button) view.findViewById(R.id.b_12uploadn);
         upload_g = (Button) view.findViewById(R.id.b_gupload);
-            et10 = (EditText) view.findViewById(R.id.e1);
+        upload_dip=(Button)view.findViewById(R.id.b_dipupload);
+        upload_pgrad=(Button)view.findViewById(R.id.b_postupload);
+        upload_score=(Button)view.findViewById(R.id.b_scoreupload);
+        upload_adhar=(Button)view.findViewById(R.id.b_adharupload);
+        upload_pan=(Button)view.findViewById(R.id.b_panupload);
+        upload_passport=(Button)view.findViewById(R.id.b_passupload);
+        upload_visa=(Button)view.findViewById(R.id.b_visaupload);
+        et10 = (EditText) view.findViewById(R.id.e1);
             et12 = (EditText) view.findViewById(R.id.e2);
              etg = (EditText) view.findViewById(R.id.e3);
+        et1=(EditText)view.findViewById(R.id.e4);
+        et2=(EditText)view.findViewById(R.id.e5);
+        et3=(EditText)view.findViewById(R.id.e6);
+        et5=(EditText)view.findViewById(R.id.e7);
+        et7=(EditText)view.findViewById(R.id.e9);
+        et9=(EditText)view.findViewById(R.id.e10);
         browse_10.setOnClickListener(this);
         browse_12.setOnClickListener(this);
         browse_g.setOnClickListener(this);
+        browse_dip.setOnClickListener(this);
+        browse_pgrad.setOnClickListener(this);
+        browse_score.setOnClickListener(this);
+        browse_adhar.setOnClickListener(this);
+        browse_pan.setOnClickListener(this);
+        browse_passport.setOnClickListener(this);
+        browse_visa.setOnClickListener(this);
         upload_10.setOnClickListener(this);
         upload_12.setOnClickListener(this);
         upload_g.setOnClickListener(this);
+        upload_dip.setOnClickListener(this);
+        upload_pgrad.setOnClickListener(this);
+        upload_score.setOnClickListener(this);
+        upload_adhar.setOnClickListener(this);
+        upload_pan.setOnClickListener(this);
+        upload_passport.setOnClickListener(this);
+        upload_visa.setOnClickListener(this);
         return view;
     }
     public void onClick(View v) {
         Intent intent = new Intent();
         switch(v.getId()){
+
+
             case R.id.b_10:
 
                 intent.setType("application/pdf");
@@ -130,12 +166,76 @@ public class Upload extends Fragment implements View.OnClickListener{
                 startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
                 upload_g.setVisibility(View.VISIBLE);
                 break;
+
+            case R.id.b_dip:
+
+                intent.setType("application/pdf");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
+
+                upload_dip.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.b_postgrad:
+
+                intent.setType("application/pdf");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
+
+                upload_pgrad.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.b_score:
+
+                intent.setType("application/pdf");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
+
+                upload_score.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.b_adhar:
+
+                intent.setType("application/pdf");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
+
+                upload_adhar.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.b_pan:
+
+                intent.setType("application/pdf");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
+
+                upload_pan.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.b_passport:
+
+                intent.setType("application/pdf");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
+
+                upload_passport.setVisibility(View.VISIBLE);
+                break;
+
+            case R.id.b_visa:
+
+                intent.setType("application/pdf");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select PDF"), 1);
+
+                upload_visa.setVisibility(View.VISIBLE);
+                break;
+
             case R.id.b_10upload:
                 (new UploadDocs(getActivity(), path)).execute();
                 upload_10.setBackgroundColor(Color.CYAN);
                 upload_10.setText("Update");
                 break;
-            case R.id.b_12upload:
+            case R.id.b_12uploadn:
                 (new UploadDocs(getActivity(), path)).execute();
                 upload_12.setBackgroundColor(Color.CYAN);
                 upload_12.setText("Update");
@@ -145,7 +245,41 @@ public class Upload extends Fragment implements View.OnClickListener{
                 upload_g.setBackgroundColor(Color.CYAN);
                 upload_12.setText("Update");
                 break;
-
+            case R.id.b_dipupload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_dip.setBackgroundColor(Color.CYAN);
+                upload_dip.setText("Update");
+                break;
+            case R.id.b_postupload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_pgrad.setBackgroundColor(Color.CYAN);
+                upload_pgrad.setText("Update");
+                break;
+            case R.id.b_scoreupload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_score.setBackgroundColor(Color.CYAN);
+                upload_score.setText("Update");
+                break;
+            case R.id.b_adharupload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_adhar.setBackgroundColor(Color.CYAN);
+                upload_adhar.setText("Update");
+                break;
+            case R.id.b_panupload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_pan.setBackgroundColor(Color.CYAN);
+                upload_pan.setText("Update");
+                break;
+            case R.id.b_passupload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_passport.setBackgroundColor(Color.CYAN);
+                upload_passport.setText("Update");
+                break;
+            case R.id.b_visaupload:
+                (new UploadDocs(getActivity(), path)).execute();
+                upload_visa.setBackgroundColor(Color.CYAN);
+                upload_visa.setText("Update");
+                break;
         }
 
     }
