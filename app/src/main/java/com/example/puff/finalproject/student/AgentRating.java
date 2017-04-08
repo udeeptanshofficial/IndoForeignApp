@@ -2,6 +2,7 @@ package com.example.puff.finalproject.student;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
+import com.example.puff.finalproject.sharedPrefrences.InitializePref;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -38,6 +40,7 @@ public class AgentRating extends AppCompatActivity {
     AutoCompleteTextView auto_text;
     Button btn_submit;
     EditText review;
+    SharedPreferences sharedpreference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +49,11 @@ public class AgentRating extends AppCompatActivity {
         auto_text = (AutoCompleteTextView) findViewById(R.id.txt_auto);
         review = (EditText) findViewById(R.id.txt_review);
         getList();
+        sharedpreference = getSharedPreferences(InitializePref.myPrefrence, this.MODE_PRIVATE);
 
     }
     public void submit(View view){
-        final String student = "ALisha Kapoor";    //replace with shared.getname
+        final String student = sharedpreference.getString("Student_name","");
         final Float value = rate.getRating();
         final String rating = String.valueOf(value);
         final String text = review.getText().toString();

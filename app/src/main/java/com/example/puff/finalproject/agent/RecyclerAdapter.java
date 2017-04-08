@@ -4,6 +4,7 @@ package com.example.puff.finalproject.agent;
  * Created by deeptansh on 20/3/17.
  */
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -22,6 +24,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.app.ProgressDialog.show;
 
@@ -78,6 +82,8 @@ public class RecyclerAdapter extends RecyclerView
 
     @Override
     public void onBindViewHolder(DataObjectHolder holder, int position) {
+        final String name=mDataset.get(position).getmText1();
+        final String college= mDataset.get(position).getmText2();
         holder.name.setText(mDataset.get(position).getmText1());
         holder.college.setText(mDataset.get(position).getmText2());
         holder.course.setText(mDataset.get(position).getMtext3());
@@ -85,13 +91,13 @@ public class RecyclerAdapter extends RecyclerView
             @Override
             public void onClick(View v) {
 
-                addNewStudent(v);
+                addNewStudent(v,name,college);
             }
         });
         holder.reject.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                removeStudent(v);
+                removeStudent(v,name,college);
             }
         });
     }
@@ -116,7 +122,9 @@ public class RecyclerAdapter extends RecyclerView
 
     }
     String UPLOAD_URL="https://alishakapoor22895.000webhostapp.com/agent/acceptRequest.php";
-    private void addNewStudent(View v){
+    private void addNewStudent(View v,String sname,String scollege){
+        final String name = sname;
+        final String college = scollege;
         final View view=v;
         final ProgressDialog loading = show(v.getContext(),"processing request...","Please wait...",false,false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, UPLOAD_URL,
@@ -125,6 +133,7 @@ public class RecyclerAdapter extends RecyclerView
                     public void onResponse(String s) {
                         Log.d("TAG", "onResponse: "+s);
                         loading.dismiss();
+                        //startActivity(Intent.getIntent());
 
 
 
@@ -138,6 +147,12 @@ public class RecyclerAdapter extends RecyclerView
                         Toast.makeText(view.getContext(), volleyError.getMessage().toString(), Toast.LENGTH_LONG).show();
                     }
                 }){
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+                map.put("student_name", name);
+                map.put("college", college);
+                return map;
+            }
 
 
         };
@@ -149,7 +164,9 @@ public class RecyclerAdapter extends RecyclerView
         requestQueue.add(stringRequest);
     }
     String REMOVE_URL = "https://alishakapoor22895.000webhostapp.com/agent/rejectRequest.php";
-    private void removeStudent(View v){
+    private void removeStudent(View v,String sname,String scollege){
+        final String name =sname;
+        final String college = scollege;
         final View view=v;
         final ProgressDialog loading = show(v.getContext(),"processing request...","Please wait...",false,false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, REMOVE_URL,
@@ -171,6 +188,13 @@ public class RecyclerAdapter extends RecyclerView
                         Toast.makeText(view.getContext(), volleyError.getMessage().toString(), Toast.LENGTH_LONG).show();
                     }
                 }){
+
+                protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+                map.put("student_name", name);
+                map.put("college", college);
+                return map;
+            }
 
 
         };

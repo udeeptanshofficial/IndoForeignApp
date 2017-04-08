@@ -1,6 +1,7 @@
 package com.example.puff.finalproject.student;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
+import com.example.puff.finalproject.sharedPrefrences.InitializePref;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -34,6 +36,7 @@ public class CollegeDetails extends AppCompatActivity {
     String college_name;
     JSONArray agents;
     JSONArray college_info,courseArray;
+    SharedPreferences sharedPreferences;
 
     private static String UPLOAD_URL = "https://alishakapoor22895.000webhostapp.com/student/collegeDetails.php";
     private RecyclerView mRecyclerView;
@@ -50,6 +53,7 @@ public class CollegeDetails extends AppCompatActivity {
         courses = (TextView)findViewById(R.id.txt_course);
         clg_image = (ImageView)findViewById(R.id.img_college);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycle_view);
+        sharedPreferences = getSharedPreferences(InitializePref.myPrefrence,this.MODE_PRIVATE);
         getCollegeInfo();
 
     }

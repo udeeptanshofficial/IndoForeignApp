@@ -127,6 +127,34 @@
            android:layout_below="@id/joining_status"
            android:layout_centerHorizontal="true"
            android:layout_margin="10dp"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/student_conf"
+           android:layout_below="@id/img_joiningstatus"
+           android:layout_margin="10dp"
+           android:layout_centerHorizontal="true" />
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/img_studentconf"
+           android:layout_below="@id/student_conf"
+           android:layout_centerHorizontal="true"
+           android:layout_margin="10dp"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/college_join"
+           android:layout_below="@id/img_studentconf"
+           android:layout_margin="10dp"
+           android:layout_centerHorizontal="true" />
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/img_collegejoin"
+           android:layout_below="@id/college_join"
+           android:layout_centerHorizontal="true"
+           android:layout_margin="10dp"/>
 
    </RelativeLayout>
 </ScrollView>

@@ -20,6 +20,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
 import com.example.puff.finalproject.agent.LPAgent;
+import com.example.puff.finalproject.sharedPrefrences.InitializePref;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -81,13 +82,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     JSONArray array = new JSONArray(response);
                     String status = array.getString(1);
                     String role = array.getString(2);
-
+                    InitializePref initPref = new InitializePref();
                     if(status.equals("success") && role.equals("agent")){
                         Intent intent = new Intent(Login.this,LPAgent.class);
+                        initPref.loginAgent(Login.this,array.getString(0));
                         startActivity(intent);
                     }
                     else if(status.equals("success") && role.equals("student")){
                         Intent intent = new Intent(Login.this,MainDrawer.class);
+                        initPref.loginStudent(Login.this,array.getString(0));
                         startActivity(intent);
                     }
                     else{
