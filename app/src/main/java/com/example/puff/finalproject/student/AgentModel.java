@@ -6,8 +6,10 @@ package com.example.puff.finalproject.student;
 
 public class AgentModel {
     private String agentName;
-    public AgentModel(String agentName) {
+    private String college;
+    public AgentModel(String agentName,String course) {
         this.agentName = agentName;
+        this.college = course;
 
     }
 
@@ -17,5 +19,13 @@ public class AgentModel {
 
     public void setAgentName(String agentName) {
         this.agentName = agentName;
+    }
+
+    public String getCollege() {
+        return college;
+    }
+
+    public void setCollege(String college) {
+        this.college = college;
     }
 }

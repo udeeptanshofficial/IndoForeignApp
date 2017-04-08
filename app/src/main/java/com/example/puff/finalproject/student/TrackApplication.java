@@ -38,11 +38,7 @@ public class TrackApplication extends AppCompatActivity {
                 imgagentstatus.setImageResource(R.mipmap.complete);
             }
             else if (temp.equals("no")){
-                agentStatus.setText("Application Rejected");
-                imgagentstatus.setImageResource(R.mipmap.rejected);
-            }
-            else {
-                agentStatus.setText("Application On Hold");
+                agentStatus.setText("Application on hold");
                 imgagentstatus.setImageResource(R.mipmap.waiting);
             }
             /*temp = jsonObject.getString("document_check");

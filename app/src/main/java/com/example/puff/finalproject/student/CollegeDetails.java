@@ -92,7 +92,7 @@ public class CollegeDetails extends AppCompatActivity {
         try{
             for (int index = 0; index < agents.length(); index++) {
                 JSONObject json_object = agents.getJSONObject(index);
-                AgentModel obj = new AgentModel(json_object.getString("agent_name"));
+                AgentModel obj = new AgentModel(json_object.getString("agent_name"),college_name);
                 results.add(index, obj);
             }
         }

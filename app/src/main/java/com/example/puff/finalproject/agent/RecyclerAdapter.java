@@ -4,6 +4,7 @@ package com.example.puff.finalproject.agent;
  * Created by deeptansh on 20/3/17.
  */
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -35,7 +36,7 @@ public class RecyclerAdapter extends RecyclerView
     private static String LOG_TAG = "MyRecyclerViewAdapter";
     private ArrayList<DataObjectNew> mDataset;
     private static MyClickListener myClickListener;
-
+    Context context;
     public static class DataObjectHolder extends RecyclerView.ViewHolder
             implements View
             .OnClickListener {
@@ -66,8 +67,9 @@ public class RecyclerAdapter extends RecyclerView
         this.myClickListener = myClickListener;
     }
 
-    public RecyclerAdapter(ArrayList<DataObjectNew> myDataset) {
+    public RecyclerAdapter(Context context, ArrayList<DataObjectNew> myDataset) {
         mDataset = myDataset;
+        this.context = context;
     }
 
     @Override
@@ -92,12 +94,14 @@ public class RecyclerAdapter extends RecyclerView
             public void onClick(View v) {
 
                 addNewStudent(v,name,college);
+                context.startActivity(new Intent(context,NewStudent.class));
             }
         });
         holder.reject.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 removeStudent(v,name,college);
+                context.startActivity(new Intent(context,NewStudent.class));
             }
         });
     }

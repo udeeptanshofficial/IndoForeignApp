@@ -32,7 +32,7 @@ public class NewStudent extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private static String LOG_TAG = "CardViewActivity";
-    private String UPLOAD_URL = "https://alishakapoor22895.000webhostapp.com/agent/connections.php";
+    private String UPLOAD_URL = "https://alishakapoor22895.000webhostapp.com/agent/pendingconn.php";
     private String JSON_ARRAY = "users";
     private JSONArray jsonArray;
 
@@ -43,6 +43,7 @@ public class NewStudent extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         getUserdata();
+
 
 
     }
@@ -71,12 +72,14 @@ public class NewStudent extends AppCompatActivity {
     }
     private void getUserdata(){
         final ProgressDialog loading = show(this,"importing data...","Please wait...",false,false);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, UPLOAD_URL,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, UPLOAD_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
-
-                        try{processJson(s);
+                        Log.d("TAG", "onResponse: "+s);
+                        if(!s.equals("{\"users\":[]}")){
+                        try{
+                            processJson(s);
                             mRecyclerView.setHasFixedSize(true);
                             mLayoutManager = new LinearLayoutManager(NewStudent.this);
                             mRecyclerView.setLayoutManager(mLayoutManager);
@@ -93,7 +96,12 @@ public class NewStudent extends AppCompatActivity {
                         catch(Exception e){
                             e.printStackTrace();
                         }
+
+                        }else {
+                            Toast.makeText(NewStudent.this, "No new applications", Toast.LENGTH_LONG).show();
+                        }
                         loading.dismiss();
+
 
 
 
