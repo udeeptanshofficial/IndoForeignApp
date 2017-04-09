@@ -114,6 +114,7 @@ public class ApplicationList extends AppCompatActivity{
                 if(temp.getString("response_recieved").equals("ok")) stat +=10;
                 if(temp.getString("visa_check").equals("ok")) stat +=10;
                 if(temp.getString("fee_submitted").equals("ok")) stat +=10;
+
                 if(temp.getString("joining_letter").equals("ok")) stat +=10;
                 if(temp.getString("student_confirmation").equals("ok")) stat +=10;
                 if(temp.getString("college_join").equals("ok")) stat +=10;

@@ -49,6 +49,8 @@ public class ApplicationAdapter extends ArrayAdapter<ApplicationModel> {
         college.setText(applicationModel.getCollege());
         int stat = Integer.parseInt(applicationModel.getStatus());
         switch (stat){
+            case 0:status.setImageResource(R.mipmap.ten);
+                break;
             case 10: status.setImageResource(R.mipmap.ten);
                         break;
             /*case 20: status.setBackground();

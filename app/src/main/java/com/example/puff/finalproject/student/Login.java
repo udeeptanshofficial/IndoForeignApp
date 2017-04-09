@@ -70,7 +70,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         if(inValid()){
             return;
         }
-        Toast.makeText(Login.this, "Start", Toast.LENGTH_SHORT).show();
+
         final String username1 = oe1.getText().toString();
         final String password1 = oe2.getText().toString();
         final ProgressDialog loading = ProgressDialog.show(this, "Please Wait....", "loggin In....", false, false);
