@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -71,7 +72,7 @@ public class ViewDocument extends AppCompatActivity {
                     public void onResponse(String s) {
                         Log.d("TAG", "onResponse: "+s);
                         new DownloadFile().execute(s, "10th.pdf");
-
+                        Toast.makeText(ViewDocument.this, "File saved in storage", Toast.LENGTH_SHORT).show();
                     }
                 },
                 new Response.ErrorListener() {
