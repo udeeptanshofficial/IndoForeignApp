@@ -24,6 +24,8 @@ public class TrackApplication extends AppCompatActivity {
         response = intent.getStringExtra("status");
         agentStatus = (TextView)findViewById(R.id.agent_status);
         imgagentstatus = (ImageView)findViewById(R.id.img_agentstatus);
+        docCheck = (TextView)findViewById(R.id.doc_status) ;
+        imgdoccheck = (ImageView)findViewById(R.id.img_docstatus);
         setFields(response);
 
     }
@@ -41,13 +43,13 @@ public class TrackApplication extends AppCompatActivity {
                 agentStatus.setText("Application on hold");
                 imgagentstatus.setImageResource(R.mipmap.waiting);
             }
-            /*temp = jsonObject.getString("document_check");
-            if(temp.equals("ok")){
-
-            }else if(temp.equals("pending")){
-
-            }else if(temp.equals("rejected")){
-
+            String ntemp = jsonObject.getString("document_check");
+            if(ntemp.equals("ok")){
+                docCheck.setText("Documents varified");
+                imgdoccheck.setImageResource(R.mipmap.complete);
+            }else if(ntemp.equals("pending")){
+                docCheck.setText("Upload readable files");
+                imgdoccheck.setImageResource(R.mipmap.waiting);
             }
             temp = jsonObject.getString("band_check");
             if(temp.equals("ok")){
@@ -57,7 +59,7 @@ public class TrackApplication extends AppCompatActivity {
             }else if(temp.equals("rejected")){
 
             }
-            temp = jsonObject.getString("application_fwd");
+           /* temp = jsonObject.getString("application_fwd");
             if(temp.equals("ok")){
 
             }else if(temp.equals("pending")){
