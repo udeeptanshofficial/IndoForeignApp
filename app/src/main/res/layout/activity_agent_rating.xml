@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/redbg"
     tools:context="com.example.puff.finalproject.student.AgentRating">
     <TextView
         android:id="@+id/txt_static"
@@ -36,10 +37,13 @@
         android:id="@+id/btn_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txt_review"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
         android:text="Submit"
-        android:onClick="submit"/>
+        android:onClick="submit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/txt_review"
+        android:layout_alignEnd="@+id/txt_auto"
+        android:layout_marginEnd="54dp" />
 
 </RelativeLayout>
