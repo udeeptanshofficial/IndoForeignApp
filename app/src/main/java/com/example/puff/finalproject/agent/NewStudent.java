@@ -1,6 +1,7 @@
 package com.example.puff.finalproject.agent;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -70,6 +71,10 @@ public class NewStudent extends AppCompatActivity {
         }
         return results;
     }
+    @Override
+    public void onBackPressed(){
+        startActivity(new Intent(this,LPAgent.class));
+    }
     private void getUserdata(){
         final ProgressDialog loading = show(this,"importing data...","Please wait...",false,false);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, UPLOAD_URL,
@@ -85,6 +90,7 @@ public class NewStudent extends AppCompatActivity {
                             mRecyclerView.setLayoutManager(mLayoutManager);
                             mAdapter = new RecyclerAdapter(NewStudent.this,getDataSet());
                             mRecyclerView.setAdapter(mAdapter);
+
                             ((RecyclerAdapter) mAdapter).setOnItemClickListener(new RecyclerAdapter
                                     .MyClickListener() {
                                 @Override
@@ -92,6 +98,7 @@ public class NewStudent extends AppCompatActivity {
                                     Log.i(LOG_TAG, " Clicked on Item " + position);
                                 }
                             });
+                            
                         }
                         catch(Exception e){
                             e.printStackTrace();
@@ -115,6 +122,7 @@ public class NewStudent extends AppCompatActivity {
                         Toast.makeText(NewStudent.this, volleyError.getMessage().toString(), Toast.LENGTH_LONG).show();
                     }
                 }){
+
 
 
         };

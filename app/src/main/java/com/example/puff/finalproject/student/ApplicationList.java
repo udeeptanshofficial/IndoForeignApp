@@ -2,12 +2,13 @@ package com.example.puff.finalproject.student;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.support.annotation.ColorInt;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class ApplicationList extends AppCompatActivity{
@@ -41,6 +43,7 @@ public class ApplicationList extends AppCompatActivity{
         sharedpreference = getSharedPreferences(InitializePref.myPrefrence, this.MODE_PRIVATE);
         getApplicationList();
         listView = (ListView)findViewById(R.id.list_view);
+       // listView2 = (ListView) findViewById(R.id.list_view);
 
     }
 
@@ -50,7 +53,7 @@ public class ApplicationList extends AppCompatActivity{
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
-                        //Toast.makeText(ApplicationList.this,s, Toast.LENGTH_LONG).show();
+                        Toast.makeText(ApplicationList.this,s, Toast.LENGTH_LONG).show();
                         Log.d("TAG", "onResponse: "+s);
                         processResponse(s);
                         ApplicationAdapter applicationAdapter = new ApplicationAdapter(ApplicationList.this,R.layout.rating_list,setListAdapter());
@@ -64,7 +67,8 @@ public class ApplicationList extends AppCompatActivity{
                                 startActivity(intent);
                             }
                         });
-
+                        //remove firebase extensions from all plaecs including both dependencies setup
+                        // apart from that add all possible combinations that u need
                     }
                 },
                 new Response.ErrorListener() {
@@ -79,15 +83,11 @@ public class ApplicationList extends AppCompatActivity{
                 map.put("student_name",student);
                 return map;
             }
-
-
-
         };
 
-        //Creating a Request Queue
+
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        //Adding request to the queue
         requestQueue.add(stringRequest);
     }
     public void processResponse(String s){
@@ -114,7 +114,6 @@ public class ApplicationList extends AppCompatActivity{
                 if(temp.getString("response_recieved").equals("ok")) stat +=10;
                 if(temp.getString("visa_check").equals("ok")) stat +=10;
                 if(temp.getString("fee_submitted").equals("ok")) stat +=10;
-
                 if(temp.getString("joining_letter").equals("ok")) stat +=10;
                 if(temp.getString("student_confirmation").equals("ok")) stat +=10;
                 if(temp.getString("college_join").equals("ok")) stat +=10;
@@ -122,6 +121,9 @@ public class ApplicationList extends AppCompatActivity{
                 ApplicationModel model = new ApplicationModel(agent,college,status);
                 data.add(index,model);
                 stat =0;
+                
+
+
             }
 
 

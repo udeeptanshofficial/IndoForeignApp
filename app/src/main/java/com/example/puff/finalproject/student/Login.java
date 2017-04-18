@@ -21,9 +21,11 @@ import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
 import com.example.puff.finalproject.agent.LPAgent;
 import com.example.puff.finalproject.sharedPrefrences.InitializePref;
+import com.onesignal.OneSignal;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,10 +55,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         ot1 = (TextView) findViewById(R.id.t1);
         ot2 = (TextView) findViewById(R.id.t2);
         ot3 = (TextView) findViewById(R.id.t3);
+
+
     }
 
     public void onClick(View v) {
         if(v==btn){
+
             loginUser();
         }
         if(v==btn1)
@@ -65,12 +70,22 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             startActivity(i);
         }
 
-    }
+    }String uid;
     public void loginUser() {
         if(inValid()){
             return;
         }
+        OneSignal.startInit(this).inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification).init();
 
+        OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
+            @Override
+            public void idsAvailable(String userId, String registrationId) {
+                //Log.d("debug", "User:" + userId);
+                uid = userId;
+                if (registrationId != null)
+                    Log.d("debug", "registrationId:" + registrationId);
+            }
+        });
         final String username1 = oe1.getText().toString();
         final String password1 = oe2.getText().toString();
         final ProgressDialog loading = ProgressDialog.show(this, "Please Wait....", "loggin In....", false, false);
@@ -87,8 +102,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         Intent intent = new Intent(Login.this,LPAgent.class);
                         initPref.loginAgent(Login.this,array.getString(0));
                         startActivity(intent);
+
                     }
                     else if(status.equals("success") && role.equals("student")){
+
                         Intent intent = new Intent(Login.this,MainDrawer.class);
                         initPref.loginStudent(Login.this,array.getString(0));
                         startActivity(intent);
@@ -116,6 +133,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 Map<String, String> map = new HashMap<>();
                 map.put("username", username1);
                 map.put("password", password1);
+                Log.d("TAG", "getParams: "+uid);
+                map.put("oneSignalId",uid);
                 return map;
             }
 

@@ -37,8 +37,5 @@ public class InitializePref {
         editor.commit();
     }
 
-    public String clear(){
-        return "";
-    }
 
 }

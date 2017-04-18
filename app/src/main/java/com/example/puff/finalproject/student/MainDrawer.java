@@ -44,7 +44,7 @@ public class MainDrawer extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+
         }
     }
 
@@ -118,5 +118,6 @@ public class MainDrawer extends AppCompatActivity
         intent = new Intent(this,AgentRating.class);
         startActivity(intent);
     }
+
 
 }

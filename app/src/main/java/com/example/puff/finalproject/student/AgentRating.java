@@ -1,11 +1,9 @@
 package com.example.puff.finalproject.student;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
+
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -24,8 +22,11 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
 import com.example.puff.finalproject.sharedPrefrences.InitializePref;
+import com.onesignal.OSNotification;
+import com.onesignal.OneSignal;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -51,8 +52,38 @@ public class AgentRating extends AppCompatActivity {
         getList();
         sharedpreference = getSharedPreferences(InitializePref.myPrefrence, this.MODE_PRIVATE);
 
+
     }
+    String uid;
     public void submit(View view){
+        OneSignal.startInit(this).inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification).init();
+
+        OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
+            @Override
+            public void idsAvailable(String userId, String registrationId) {
+                //Log.d("debug", "User:" + userId);
+                uid = userId;
+                try {
+                    OneSignal.postNotification(new JSONObject("{'contents': {'en':'Test Message'}, 'include_player_ids': ['" + userId + "']}"),
+                            new OneSignal.PostNotificationResponseHandler() {
+                                @Override
+                                public void onSuccess(JSONObject response) {
+                                    Log.i("OneSignalExample", "postNotification Success: " + response.toString());
+                                }
+
+                                @Override
+                                public void onFailure(JSONObject response) {
+                                    Log.e("OneSignalExample", "postNotification Failure: " + response.toString());
+                                }
+                            });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if (registrationId != null)
+                    Log.d("debug", "registrationId:" + registrationId);
+            }
+        });
+        //Log.d("TAG", "submit: "+uid);
         final String student = sharedpreference.getString("Student_name","");
         final Float value = rate.getRating();
         final String rating = String.valueOf(value);
@@ -143,4 +174,13 @@ public class AgentRating extends AppCompatActivity {
 
 
     }
+
 }
+/*class ExampleNotificationReceivedHandler implements OneSignal.NotificationReceivedHandler {
+    @Override
+    public void notificationReceived(OSNotification notification) {
+        JSONObject data = notification.payload.additionalData;
+
+    }
+
+}*/

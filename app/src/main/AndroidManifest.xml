@@ -3,10 +3,10 @@
     package="com.example.puff.finalproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -41,11 +41,15 @@
         <activity android:name=".agent.UpdateStatus" />
         <activity android:name=".student.AgentRating" />
         <activity android:name=".student.TrackApplication" />
-        <activity android:name=".student.ApplicationList"/>
+        <activity android:name=".student.ApplicationList" />
         <activity android:name=".agent.LPAgent" />
         <activity android:name=".agent.NewStudent" />
         <activity android:name=".agent.StudentList" />
         <activity android:name=".agent.ViewDocument" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".agent.ProfileView" />
+        <activity android:name=".agent.ProfileEdit" />
+        <activity android:name=".student.ViewProfile"></activity>
     </application>
 
 </manifest>
