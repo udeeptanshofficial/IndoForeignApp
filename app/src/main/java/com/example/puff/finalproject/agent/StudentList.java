@@ -1,6 +1,7 @@
 package com.example.puff.finalproject.agent;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -87,7 +88,14 @@ public class StudentList extends AppCompatActivity {
                                     .MyClickListener() {
                                 @Override
                                 public void onItemClick(int position, View v) {
-                                    Log.i(LOG_TAG, " Clicked on Item " + position);
+                                    Intent intent = new Intent(StudentList.this, StudentProfile.class);
+                                    String student = null;
+                                    try {
+                                        student = jsonArray.getJSONObject(position).getString("student_name");
+                                    } catch (Exception e) {
+                                    }
+                                    intent.putExtra("Student Name", student);
+                                    startActivity(intent);
                                 }
                             });
                         }

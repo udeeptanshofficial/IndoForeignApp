@@ -29,7 +29,7 @@ public class LPAgent extends AppCompatActivity {
         startActivity(changeActivity);
     }
     public void updateStatus(View v){
-        changeActivity = new Intent(this,UpdateStatus.class);
+        changeActivity = new Intent(this,StudentsApplication.class);
         startActivity(changeActivity);
     }
 
