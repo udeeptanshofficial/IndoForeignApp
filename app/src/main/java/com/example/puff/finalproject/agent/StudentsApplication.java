@@ -45,7 +45,7 @@ public class StudentsApplication extends AppCompatActivity {
         sharedpreference = getSharedPreferences(InitializePref.myPrefrence, this.MODE_PRIVATE);
         getApplicationList();
         listView = (ListView)findViewById(R.id.list_view);
-        // listView2 = (ListView) findViewById(R.id.list_view);
+
 
     }
 
@@ -63,10 +63,10 @@ public class StudentsApplication extends AppCompatActivity {
                         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                Intent intent  = new Intent(StudentsApplication.this,TrackApplication.class);
+                                Intent intent  = new Intent(StudentsApplication.this,UpdateStatus.class);
                                 try{
                                     intent.putExtra("status",applications.getJSONObject(position).toString());}catch(Exception e){}
-                                startActivity(intent);
+                                    startActivity(intent);
                             }
                         });
 

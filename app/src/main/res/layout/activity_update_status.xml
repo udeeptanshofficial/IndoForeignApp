@@ -3,10 +3,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context=".agent.UpdateStatus">
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#007470">
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imgProfilePicture"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/account_logo"
+            android:layout_margin="5dp"
+            />
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imgProfilePicture"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:hint="Student Name"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/txt_college"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_name"
+            android:layout_toEndOf="@id/imgProfilePicture"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:hint="College Name"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/txt_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_college"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/imgProfilePicture"
+            android:textColor="#fff"
+            android:hint="Course"
+            android:textColorHint="#fff"
+            android:textSize="15dp"
+
+            />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/list_linear"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="60dp"
+        android:layout_below="@+id/rel1"
+        android:weightSum="1">
+        <ListView
+
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        </ListView>
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Current Process"
+        android:textSize="25sp"
+        android:gravity="center_vertical"
+
+
+        android:id="@+id/textView10" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="#007470"
+        android:textColor="#fff"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:id="@+id/btn_update"
+        android:visibility="gone"
+        android:onClick="openDialog"/>
+
+
 
 </RelativeLayout>
