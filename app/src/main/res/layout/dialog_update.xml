@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radiogroup"
+        android:orientation="horizontal"
+        android:layout_marginStart="97dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
+        <RadioButton
+            android:id="@+id/accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:layout_marginRight="10dp"
+            android:shadowColor="#079e05"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/reject"
+            android:text="Reject"
+            android:layout_marginStart="10dp"
+            android:shadowColor="#ff0623"/>
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit"
+        android:hint="Message"
+        android:layout_below="@+id/radiogroup"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="47dp" />
 </RelativeLayout>

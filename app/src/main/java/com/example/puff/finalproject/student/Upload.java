@@ -15,8 +15,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
+import com.example.puff.finalproject.agent.LPAgent;
+import com.example.puff.finalproject.sharedPrefrences.InitializePref;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -24,6 +37,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 
 import static android.app.Activity.RESULT_OK;
@@ -110,12 +125,13 @@ public class Upload extends Fragment implements View.OnClickListener{
         et10 = (EditText) view.findViewById(R.id.e1);
             et12 = (EditText) view.findViewById(R.id.e2);
              etg = (EditText) view.findViewById(R.id.e3);
-        et1=(EditText)view.findViewById(R.id.e4);
-        et2=(EditText)view.findViewById(R.id.e5);
-        et3=(EditText)view.findViewById(R.id.e6);
-        et5=(EditText)view.findViewById(R.id.e7);
-        et7=(EditText)view.findViewById(R.id.e9);
-        et9=(EditText)view.findViewById(R.id.e10);
+        et1=(EditText)view.findViewById(R.id.e4);  //diploma
+        et2=(EditText)view.findViewById(R.id.e5);  //pg
+        et3=(EditText)view.findViewById(R.id.e6);  //score
+        et5=(EditText)view.findViewById(R.id.e7);  //aadhar
+        et8=(EditText)view.findViewById(R.id.e8);  //pan
+        et7=(EditText)view.findViewById(R.id.e9);  //passport
+        et9=(EditText)view.findViewById(R.id.e10); //visa
         browse_10.setOnClickListener(this);
         browse_12.setOnClickListener(this);
         browse_g.setOnClickListener(this);
@@ -232,15 +248,19 @@ public class Upload extends Fragment implements View.OnClickListener{
 
             case R.id.b_10upload:
                 (new UploadDocs(getActivity(), path)).execute();
+                sendParams(et10.getText().toString(),"10th");
                 upload_10.setBackgroundColor(Color.CYAN);
                 upload_10.setText("Update");
                 break;
             case R.id.b_12uploadn:
+
                 (new UploadDocs(getActivity(), path)).execute();
+                sendParams(et12.getText().toString(),"12th");
                 upload_12.setBackgroundColor(Color.CYAN);
                 upload_12.setText("Update");
                 break;
             case R.id.b_gupload:
+                sendParams(etg.getText().toString(),"");
                 (new UploadDocs(getActivity(), path)).execute();
                 upload_g.setBackgroundColor(Color.CYAN);
                 upload_12.setText("Update");
@@ -294,7 +314,31 @@ public class Upload extends Fragment implements View.OnClickListener{
             }
         }
     }
+    public void sendParams(final String name, final String type){
+        StringRequest request = new StringRequest(Request.Method.POST, "https://alishakapoor22895.000webhostapp.com/uploadpdf.php", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
 
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }
+        ) {
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+                map.put("name", name);
+                map.put("type", type);
+
+                return map;
+            }
+
+        };
+        RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        queue.add(request);
+    }
 
 }
 class UploadDocs extends AsyncTask<Void, Void, Void> {
