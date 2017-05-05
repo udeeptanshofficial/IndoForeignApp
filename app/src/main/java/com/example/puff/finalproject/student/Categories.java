@@ -71,6 +71,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
     EditText course;
 
     Button btn;
+    SharedPreferences sharedpreference;
 
     private Categories.OnFragmentInteractionListener mListener;
     public Categories()
@@ -139,6 +140,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
         adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spn.setAdapter(adap);
         spn.setSelection(listsize);
+        sharedpreference = getActivity().getSharedPreferences(InitializePref.myPrefrence, this.getActivity().MODE_PRIVATE);
         return view;
 
     }
@@ -170,7 +172,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
     {
         final String courses=course.getText().toString();
         final String spnr=spn.getSelectedItem().toString();
-        final String getName;
+        final String getName = sharedpreference.getString("Student_name","");
         int SelectedId=radiogp.getCheckedRadioButtonId();
         or3=(RadioButton)view.findViewById(SelectedId);
         final String getCountry=or3.getText().toString();
@@ -203,10 +205,11 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                //params.put("student",getName);
+                params.put("student",getName);
                 params.put("country", getCountry);
                 params.put("course", courses);
                 params.put("study_level", spnr);
+                Log.d("TAG", "getParams: "+getName+getCountry+courses+spnr);
                 return params;
             }
 

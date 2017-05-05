@@ -46,7 +46,6 @@
         <activity android:name=".agent.NewStudent" />
         <activity android:name=".agent.StudentList" />
         <activity android:name=".agent.ViewDocument" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".agent.ProfileView" />
         <activity android:name=".agent.ProfileEdit" />
         <activity android:name=".agent.StudentProfile" />

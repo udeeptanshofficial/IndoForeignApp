@@ -53,7 +53,6 @@ public class UpdateDialog extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         sharedpreference = this.getActivity().getSharedPreferences(UpdateStatus.myPrefrence, this.getActivity().MODE_PRIVATE);
         playerid = sharedpreference.getString("playerid","");
@@ -141,7 +140,7 @@ public class UpdateDialog extends DialogFragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                
+
                 Intent intent = new Intent(getContext(),StudentsApplication.class);
                 startActivity(intent);
             }
