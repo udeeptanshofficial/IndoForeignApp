@@ -99,7 +99,7 @@ public class ViewDocument extends AppCompatActivity {
         String fileUrl = strings[0];   // -> http://maven.apache.org/maven-1.x/maven.pdf
         String fileName = strings[1];  // -> maven.pdf
         String extStorageDirectory = Environment.getExternalStorageDirectory().toString();
-        File folder = new File(extStorageDirectory, "docs");
+        File folder = new File(extStorageDirectory, "IndoForeign");
         folder.mkdir();
 
         File pdfFile = new File(folder, fileName);

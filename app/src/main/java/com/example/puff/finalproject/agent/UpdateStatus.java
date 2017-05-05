@@ -1,6 +1,8 @@
 package com.example.puff.finalproject.agent;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,16 +13,29 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
+import com.example.puff.finalproject.sharedPrefrences.InitializePref;
+import com.example.puff.finalproject.student.Login;
+import com.example.puff.finalproject.student.MainDrawer;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UpdateStatus extends AppCompatActivity {
-    String application;
+    String application,playerid,studentname,notifyProcess;
     ImageView userImage;
     ListView listView;
     TextView student,college,course,curr_process;
@@ -49,6 +64,7 @@ public class UpdateStatus extends AppCompatActivity {
 
         try{
             object = new JSONObject(application);
+            studentname = object.getString("student_name");
             student.setText(object.getString("student_name"));
             college.setText(object.getString("college"));
             course.setText(object.getString("course"));
@@ -104,6 +120,7 @@ public class UpdateStatus extends AppCompatActivity {
         for(int index = 0;index<process.size();index++){
             temp = status.get(index).toString();
             if(temp.equals("no") || temp.equals("")){
+                notifyProcess = process.get(index).toString();
                 curr_process.setText(process.get(index).toString());
                 update.setVisibility(View.VISIBLE);
                 break;
@@ -118,7 +135,42 @@ public class UpdateStatus extends AppCompatActivity {
         return data;
     }
     public void openDialog(View view){
-        Toast.makeText(this, "fnuds", Toast.LENGTH_SHORT).show();
+        getplayerid();
+
+    }
+    SharedPreferences sharedPreferences;
+    public static final String myPrefrence="Notification";
+    public void getplayerid(){
+        StringRequest request = new StringRequest(Request.Method.POST, "https://alishakapoor22895.000webhostapp.com/agent/getplayerid.php", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                playerid=response;
+                sharedPreferences = UpdateStatus.this.getSharedPreferences(myPrefrence, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("playerid",playerid);
+                editor.putString("process",notifyProcess);
+                editor.putString("student",studentname);
+                editor.commit();
+                UpdateDialog updateDialog = new UpdateDialog();
+                updateDialog.show(getFragmentManager(),"passed value");
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }
+        ) {
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> map = new HashMap<>();
+                map.put("username", studentname);
+
+                return map;
+            }
+
+        };
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        queue.add(request);
     }
 
 }
