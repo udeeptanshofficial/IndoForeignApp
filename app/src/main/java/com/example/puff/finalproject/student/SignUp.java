@@ -17,6 +17,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -42,6 +43,8 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
     private RadioButton or1,or2;
     private RadioGroup radioGroup;
 
+    Toolbar tool;
+
     final String Signup_URL = "https://alishakapoor22895.000webhostapp.com/Signup.php";
 
 
@@ -50,6 +53,8 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        tool=(Toolbar)findViewById(R.id.toolbar);
+        tool.setTitle("INDO FOREIGN");
         fn=(TextView)findViewById(R.id.t1);
         ln=(TextView)findViewById(R.id.t2);
         email=(TextView)findViewById(R.id.t3);

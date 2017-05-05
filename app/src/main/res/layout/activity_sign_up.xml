@@ -6,10 +6,16 @@
     android:background="@drawable/backg"
     android:alpha="0.8"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.puff.finalproject.student.SignUp">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#6E8D3E"
+        android:elevation="10dp">
+    </android.support.v7.widget.Toolbar>
 
     <TextView
         android:id="@+id/t1"
@@ -18,7 +24,10 @@
         android:text="First Name"
         android:textStyle="bold"
         android:textColor="#000"
-        android:textSize="22dp" />
+        android:textSize="22dp"
+        android:layout_marginTop="21dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true" />
 
 
     <TextView

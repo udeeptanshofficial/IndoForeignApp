@@ -5,13 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.support.v7.widget.Toolbar;
 
 import com.example.puff.finalproject.AgentSignUp;
 import com.example.puff.finalproject.R;
 
 public class Selectone extends AppCompatActivity implements View.OnClickListener {
     Button btn1,btn2;
-
+    Toolbar tool;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,9 @@ public class Selectone extends AppCompatActivity implements View.OnClickListener
 
         btn2=(Button)findViewById(R.id.button3);
         btn2.setOnClickListener(this);
+
+        tool=(Toolbar)findViewById(R.id.toolbar);
+        tool.setTitle("INDO FOREIGN");
     }
 
     @Override

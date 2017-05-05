@@ -1,17 +1,29 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/redbg"
+    android:background="#B394CD"
     tools:context="com.example.puff.finalproject.student.AboutUs">
 
     <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/img"
+        android:background="@mipmap/ic_launcher"
+        android:layout_alignTop="@+id/t1"
+        android:layout_alignStart="@+id/t1"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="8dp" />
+
     <TextView
+        android:id="@+id/t1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/t1"
+        android:paddingTop="120dp"
+        android:text="This app is to automate the process of application for colleges in other countries via agents. We are providing an interface to agents where they can setup their accounts on app and provide services online and on client side students can register and apply for admission process. This app will help in reducing extra efforts of students"
         android:textColor="#000"
-        android:textSize="25dp"
-        android:text="This app is to automate the process of application for colleges in other countries via agents. We are providing an interface to agents where they can setup their accounts on app and provide services online and on client side students can register and apply for admission process. This app will help in reducing extra efforts of students"/>
+        android:textSize="20dp"
+        android:layout_alignParentTop="true" />
 
-</FrameLayout>
+</RelativeLayout>

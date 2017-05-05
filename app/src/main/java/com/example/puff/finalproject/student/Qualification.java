@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
-
+import android.support.v7.widget.Toolbar;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,6 +27,7 @@ import java.util.Map;
 public class Qualification extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     private int backpress;
 
+    Toolbar tool;
     final String Signup_URL = "https://alishakapoor22895.000webhostapp.com/Qualification.php";
 
     Spinner spn;
@@ -69,6 +70,8 @@ public class Qualification extends AppCompatActivity implements AdapterView.OnIt
         spn.setAdapter(adapter);
         spn.setOnItemSelectedListener(this);
 
+        tool=(Toolbar)findViewById(R.id.toolbar);
+        tool.setTitle("INDO FOREIGN");
 
         spn1 = (Spinner) findViewById(R.id.s1);
         spn1.setOnItemSelectedListener(this);
@@ -124,11 +127,11 @@ public class Qualification extends AppCompatActivity implements AdapterView.OnIt
         arrayl2 = new ArrayList<String>();
         arrayl2.add("2017");
         arrayl2.add("2018");
+        spn3.setAdapter(adapter3);
+
         arrayl2.add("2019");
         arrayl2.add("2020");
         adapter3 = new ArrayAdapter(this, R.layout.spinner1_item, arrayl2);
-        spn3.setAdapter(adapter3);
-
         spn4 = (Spinner) findViewById(R.id.s4);
         spn4.setOnItemSelectedListener(this);
         arrayl3 = new ArrayList<String>();

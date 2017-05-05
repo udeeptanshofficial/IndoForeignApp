@@ -9,6 +9,15 @@
     tools:context="com.example.puff.finalproject.AgentSignUp">
 
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#D97F64"
+        android:elevation="10dp">
+    </android.support.v7.widget.Toolbar>
+
     <TextView
         android:id="@+id/t6"
         android:layout_width="match_parent"
@@ -17,9 +26,9 @@
         android:textStyle="bold"
         android:textColor="#000"
         android:textSize="22sp"
-        android:layout_marginTop="11dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp" />
     <EditText
         android:id="@+id/e6"
         android:layout_width="match_parent"
@@ -39,9 +48,9 @@
         android:textStyle="bold"
         android:textColor="#000"
         android:textSize="22sp"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/e6"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="13dp" />
+        android:layout_alignParentStart="true" />
     <EditText
         android:id="@+id/e1"
         android:layout_width="match_parent"
@@ -57,7 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mobile"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="27dp"
         android:textStyle="bold"
         android:textColor="#000"
         android:textSize="22sp"
@@ -100,7 +109,7 @@
         android:textColor="#000"
         android:id="@+id/t4"
         android:textSize="22sp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="13dp"
         android:layout_below="@+id/s1"
         android:layout_alignParentStart="true" />
     <EditText
@@ -142,7 +151,7 @@
         android:text="Sign up"
          android:background="#EF6C00"
         android:textColor="#000"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="23dp"
         android:layout_below="@+id/e4"
         android:layout_centerHorizontal="true" />
 

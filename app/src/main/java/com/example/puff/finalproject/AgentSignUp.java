@@ -15,7 +15,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.support.v7.widget.Toolbar;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -37,6 +37,8 @@ public class AgentSignUp extends AppCompatActivity implements AdapterView.OnItem
     Spinner spinner;
     Button btn;
 
+    Toolbar tool;
+
     final String AgentSignup_URL = "https://alishakapoor22895.000webhostapp.com/agentsignup.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,9 @@ public class AgentSignUp extends AppCompatActivity implements AdapterView.OnItem
 
         btn=(Button)findViewById(R.id.button);
         btn.setOnClickListener(this);
+
+        tool=(Toolbar)findViewById(R.id.toolbar);
+        tool.setTitle("INDO FOREIGN");
 
         e1=(EditText)findViewById(R.id.e1);
         e2=(EditText)findViewById(R.id.e2);

@@ -37,6 +37,7 @@ import java.util.Map;
 import static com.example.puff.finalproject.R.id.c1;
 import static com.example.puff.finalproject.R.id.c2;
 import static com.example.puff.finalproject.R.id.c3;
+import static com.example.puff.finalproject.R.id.e1;
 
 
 /**
@@ -53,7 +54,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    final String Category_URL= "https://alishakapoor22895.000webhostapp.com/category.php";
+    final String Category_URL = "https://alishakapoor22895.000webhostapp.com/category.php";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -64,7 +65,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
     ArrayList<String> array1;
     ArrayAdapter adap;
 
-    RadioButton country1,country2,country3;
+    RadioButton country1, country2, country3;
     RadioGroup radiogp;
     private RadioButton or3;
 
@@ -73,21 +74,11 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
     Button btn;
 
     private Categories.OnFragmentInteractionListener mListener;
-    public Categories()
-    {
+
+    public Categories() {
         // Required empty public constructor
     }
 
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Categories.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Categories newInstance(String param1, String param2) {
         Categories fragment = new Categories();
         Bundle args = new Bundle();
@@ -110,30 +101,29 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_categories, container, false);
+        view = inflater.inflate(R.layout.fragment_categories, container, false);
 
-        btn=(Button)view.findViewById(R.id.b1);
+        btn = (Button) view.findViewById(R.id.b1);
         btn.setOnClickListener(this);
 
-        country1=(RadioButton) view.findViewById(c1);
-        country2=(RadioButton) view.findViewById(c2);
-        country3=(RadioButton) view.findViewById(c3);
-        radiogp=(RadioGroup)view.findViewById(R.id.radiogrp);
+        country1 = (RadioButton) view.findViewById(c1);
+        country2 = (RadioButton) view.findViewById(c2);
+        country3 = (RadioButton) view.findViewById(c3);
+        radiogp = (RadioGroup) view.findViewById(R.id.radiogrp);
 
-        course=(EditText)view.findViewById(R.id.e1);
-        spn=(Spinner)view.findViewById(R.id.s1);
+        course = (EditText) view.findViewById(e1);
+        spn = (Spinner) view.findViewById(R.id.s1);
         spn.setOnItemSelectedListener(this);
-        array1=new ArrayList<>();
+        array1 = new ArrayList<>();
         array1.add("Postgraduate Courses");
         array1.add("Undergraduate Courses");
         array1.add("Diploma");
         array1.add("[Choose Study Level]");
         final int listsize = array1.size() - 1;
-        adap=new ArrayAdapter<String>(this.getActivity(),R.layout.spinner1_item,array1)
-        {
+        adap = new ArrayAdapter<String>(this.getActivity(), R.layout.spinner1_item, array1) {
             @Override
             public int getCount() {
-                return(listsize); // Truncate the list
+                return (listsize); // Truncate the list
             }
         };
         adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -153,12 +143,12 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
 
     }
 
-    public void onClick(View v)
-    {
-        if(v==btn)
-        {
-            if(radiogp.getCheckedRadioButtonId() == -1)
-            {
+    public void onClick(View v) {
+        if (v == btn) {
+            if (inValid()) {
+                return;
+            }
+            if (radiogp.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this.getActivity(), "Select Country", Toast.LENGTH_SHORT).show();
 
                 return;
@@ -166,14 +156,14 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
             categoryEntry();
         }
     }
-    public void categoryEntry()
-    {
-        final String courses=course.getText().toString();
-        final String spnr=spn.getSelectedItem().toString();
+
+    public void categoryEntry() {
+        final String courses = course.getText().toString();
+        final String spnr = spn.getSelectedItem().toString();
         final String getName;
-        int SelectedId=radiogp.getCheckedRadioButtonId();
-        or3=(RadioButton)view.findViewById(SelectedId);
-        final String getCountry=or3.getText().toString();
+        int SelectedId = radiogp.getCheckedRadioButtonId();
+        or3 = (RadioButton) view.findViewById(SelectedId);
+        final String getCountry = or3.getText().toString();
         StringRequest stringRequest;
         final ProgressDialog loading = ProgressDialog.show(this.getActivity(), "Please Wait.....", "Response Submit", false, false);
         stringRequest = new StringRequest(Request.Method.POST, Category_URL,
@@ -216,6 +206,32 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
         requestQueue.add(stringRequest);
     }
 
-    public interface OnFragmentInteractionListener {
+    public boolean inValid() {
+        String getCourse = course.getText().toString();
+        String getCountry1 = country1.getText().toString();
+        String getCountry2 = country2.getText().toString();
+        String getCountry3 = country3.getText().toString();
+
+
+        if (getCourse.isEmpty()) {
+            course.setError("Enter First Name");
+            return true;
+        }
+        if (getCountry1.isEmpty()) {
+            country1.setError("Select Country");
+            return true;
+        }
+        if (getCountry2.isEmpty()) {
+            country2.setError("Select Country");
+            return true;
+        }
+        if (getCountry3.isEmpty()) {
+            country3.setError("Select Country");
+            return true;
+        }
+        return false;
+    }
+
+    public class OnFragmentInteractionListener {
     }
 }

@@ -5,7 +5,7 @@
     <RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/redbg"
+    android:background="#B394CD"
     tools:context="com.example.puff.finalproject.student.Upload">
 
     <!-- TODO: Update blank fragment layout -->
@@ -15,7 +15,7 @@
         android:text="10th"
         android:textColor="#000"
         android:id="@+id/t1"
-        android:textSize="30dp"/>
+        android:textSize="22dp"/>
 
     <EditText
     android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
         android:text="12th"
         android:textColor="#000"
         android:id="@+id/t2"
-        android:textSize="30dp"
+        android:textSize="22dp"
         android:layout_below="@+id/b_10"
         android:layout_alignParentStart="true"
         android:layout_marginTop="18dp" />
@@ -61,7 +61,7 @@
         android:text="Diploma"
         android:textColor="#000"
         android:id="@+id/t4"
-        android:textSize="30dp"
+        android:textSize="22dp"
         android:layout_below="@id/e2"
         android:layout_alignParentStart="true"
         android:layout_marginTop="18dp" />
@@ -80,8 +80,8 @@
         android:layout_height="wrap_content"
         android:text="Browse"
         android:id="@+id/b_dip"
-         android:layout_above="@+id/t3"
-         android:layout_toEndOf="@+id/t3" />
+         android:layout_alignTop="@+id/b_dipupload"
+         android:layout_alignStart="@+id/b_12" />
 
         <Button
         android:layout_width="wrap_content"
@@ -107,10 +107,10 @@
         android:text="Graduation"
         android:textColor="#000"
         android:id="@+id/t3"
-        android:textSize="30dp"
-        android:layout_marginTop="27dp"
+        android:textSize="22dp"
+        android:layout_marginTop="24dp"
         android:layout_below="@+id/b_dipupload"
-        android:layout_toStartOf="@+id/b_12" />
+        android:layout_alignEnd="@+id/t7" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -136,8 +136,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/b_g"
         android:text="Browse"
-        android:layout_toEndOf="@+id/t3"
-        android:layout_alignBottom="@+id/e3" />
+        android:layout_above="@+id/t5"
+        android:layout_alignStart="@+id/b_12" />
 
     <Button
         android:layout_width="wrap_content"
@@ -156,7 +156,7 @@
         android:text="Post Graduation"
         android:textColor="#000"
         android:id="@+id/t5"
-        android:textSize="30dp"
+        android:textSize="22dp"
         android:layout_below="@+id/e3"
         android:layout_alignParentStart="true"
         android:layout_marginTop="19dp" />
@@ -194,7 +194,7 @@
         android:text="Score Card"
         android:textColor="#000"
         android:id="@+id/t6"
-        android:textSize="30dp"
+        android:textSize="22dp"
         android:layout_below="@+id/e5"
         android:layout_alignParentStart="true"
         android:layout_marginTop="19dp" />
@@ -233,7 +233,7 @@
         android:text="Adhar Card"
         android:textColor="#000"
         android:id="@+id/t7"
-        android:textSize="30dp"
+        android:textSize="22dp"
         android:layout_below="@+id/e6"
         android:layout_alignParentStart="true"
         android:layout_marginTop="19dp" />
@@ -261,9 +261,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/b_adhar"
         android:text="Browse"
-        android:layout_alignBaseline="@+id/e7"
         android:layout_alignBottom="@+id/e7"
-        android:layout_toEndOf="@+id/t7" />
+        android:layout_alignStart="@+id/b_score" />
 
      <TextView
         android:layout_width="wrap_content"
@@ -271,7 +270,7 @@
         android:text="Pan Card"
         android:textColor="#000"
         android:id="@+id/t8"
-        android:textSize="30dp"
+        android:textSize="22dp"
         android:layout_below="@id/e7"
         android:layout_alignParentStart="true"
         android:layout_marginTop="19dp" />
@@ -309,7 +308,7 @@
         android:text="Passport"
         android:textColor="#000"
         android:id="@+id/t9"
-        android:textSize="30dp"
+        android:textSize="22dp"
         android:layout_below="@id/e8"
         android:layout_alignParentStart="true"
         android:layout_marginTop="19dp" />
@@ -338,7 +337,7 @@
         android:id="@+id/b_passport"
         android:text="Browse"
         android:layout_alignBottom="@+id/e9"
-        android:layout_toEndOf="@+id/t6" />
+        android:layout_alignStart="@+id/b_pan" />
 
       <TextView
         android:layout_width="wrap_content"
@@ -346,7 +345,7 @@
         android:text="Visa "
         android:textColor="#000"
         android:id="@+id/t0"
-        android:textSize="30dp"
+        android:textSize="22dp"
           android:layout_marginTop="18dp"
           android:layout_below="@+id/e9"
           android:layout_alignStart="@+id/t3" />

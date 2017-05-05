@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/redbg"
-    tools:context=".agent.ViewDocument">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:context=".agent.ViewDocument">
 
     <EditText
         android:layout_width="wrap_content"
@@ -31,104 +30,176 @@
         android:onClick="check"
         android:clickable="false"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Document Search"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marksheet 10th"
+            android:textColor="#000"
+            android:id="@+id/t1"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/editText"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Marksheet 10th"
-        android:id="@+id/txt_10th"
-        android:layout_marginTop="45dp"
-        android:layout_below="@id/editText"
-        android:layout_toLeftOf="@id/textView"
-        android:layout_toStartOf="@id/textView" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:id="@+id/b1"
+            android:layout_marginLeft="15dp"
+            android:layout_alignBaseline="@+id/t1"
+            android:layout_alignBottom="@+id/t1"
+            android:layout_alignEnd="@+id/bt2" />
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/c1"
-        android:layout_alignBottom="@id/txt_10th"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marksheet 12th"
+            android:textColor="#000"
+            android:id="@+id/mark12"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/t1"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:id="@+id/bt2"
+            android:layout_marginLeft="15dp"
+            android:layout_alignStart="@+id/bt3"
+            android:layout_marginStart="8dp"
+            android:layout_below="@+id/b1" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Download"
-        android:id="@+id/b1"
-        android:layout_alignTop="@id/txt_10th"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:visibility="invisible"
-        android:onClick="downloadTen"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marksheet Diploma"
+            android:textColor="#000"
+            android:id="@+id/t3"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/mark12"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Marksheet 12th"
-        android:id="@+id/txt_12"
-        android:layout_marginTop="45dp"
-        android:layout_below="@id/txt_10th"
-        android:layout_toLeftOf="@id/textView"
-        android:layout_alignRight="@id/txt_10th"
-        android:layout_alignEnd="@id/txt_10th" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:id="@+id/bt3"
+            android:layout_marginLeft="15dp"
+            android:layout_alignBaseline="@+id/t3"
+            android:layout_alignBottom="@+id/t3"
+            android:layout_alignEnd="@+id/bt6" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marksheet Graduation"
+            android:textColor="#000"
+            android:id="@+id/t4"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/t3"/>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/c2"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@id/c1"
-        android:layout_alignStart="@id/c1" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:id="@+id/bt4"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@+id/bt3"
+            android:layout_alignParentEnd="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Download"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@id/b1"
-        android:layout_alignStart="@id/b1"
-        android:id="@+id/button"
-        android:visibility="invisible"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marksheet PostGraduation"
+            android:textColor="#000"
+            android:id="@+id/t5"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/t4"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:id="@+id/bt5"
+            android:layout_marginLeft="15dp"
+            android:layout_alignTop="@+id/t5"
+            android:layout_alignEnd="@+id/bt3" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Marksheet
-Graduation"
-        android:id="@+id/txt_grad"
-        android:layout_marginTop="45dp"
-        android:layout_below="@id/button"
-         />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score Card"
+            android:textColor="#000"
+            android:id="@+id/t6"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/t5"/>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/c3"
-        android:layout_alignTop="@id/txt_grad"
-        android:layout_alignLeft="@id/c2"
-        android:layout_alignStart="@id/c2" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:id="@+id/bt6"
+            android:layout_marginLeft="15dp"
+            android:layout_above="@+id/bt7"
+            android:layout_alignParentEnd="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Download"
-        android:id="@+id/b3"
-        android:layout_alignTop="@id/txt_grad"
-        android:layout_alignLeft="@id/button"
-        android:layout_alignStart="@id/button"
-        android:visibility="invisible"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adhar Card"
+            android:textColor="#000"
+            android:id="@+id/t7"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/t6"/>
 
-</RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:id="@+id/bt7"
+            android:layout_alignTop="@+id/t7"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pan Card"
+            android:textColor="#000"
+            android:id="@+id/t8"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/t7"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:id="@+id/bt8"
+            android:layout_alignTop="@+id/t8"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textColor="#000"
+            android:id="@+id/t9"
+            android:textSize="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/t8"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Browse"
+            android:id="@+id/bt9"
+            android:layout_alignTop="@+id/t9"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+</ScrollView>

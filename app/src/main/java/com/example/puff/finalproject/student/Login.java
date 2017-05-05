@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,7 @@ import java.util.jar.JarException;
 public class Login extends AppCompatActivity implements View.OnClickListener {
     private int backpress;
 
+    Toolbar tool;
     Button btn,btn1;
     EditText oe1, oe2;
     TextView ot1, ot2, ot3;
@@ -49,6 +51,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         btn1 = (Button) findViewById(R.id.b2);
         btn1.setOnClickListener(this);
+
+        tool=(Toolbar)findViewById(R.id.toolbar);
+        tool.setTitle("INDO FOREIGN");
 
         oe1 = (EditText) findViewById(R.id.e1);
         oe2 = (EditText) findViewById(R.id.e2);

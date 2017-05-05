@@ -88,7 +88,7 @@ public class MainDrawer extends AppCompatActivity
 
         }
         else if (id == R.id.nav_logout) {
-            Intent loginscreen=new Intent(this,Login.class);
+            Intent loginscreen=new Intent(this,Splash.class);
             loginscreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(loginscreen);
         }

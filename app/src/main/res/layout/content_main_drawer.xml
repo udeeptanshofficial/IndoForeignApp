@@ -5,98 +5,99 @@
     android:id="@+id/content_main_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.puff.finalproject.student.MainDrawer"
-    android:background="@drawable/redbg"
+    android:background="@drawable/cd"
     tools:showIn="@layout/app_bar_main_drawer">
 
-        <ImageButton
-            android:id="@+id/btn_suggest"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:background="@drawable/img4"
-            android:onClick="suggestCollege"
-            android:layout_marginTop="35dp"
-            android:layout_marginStart="22dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
+        <RelativeLayout
+            android:id="@+id/slide"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:fitsSystemWindows="true"
+            android:layout_alignParentTop="true">
+                <ViewFlipper
+                    android:id="@+id/view_flipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:paddingBottom="20dp"
+                    android:autoStart="true"
+                    android:layout_alignParentTop="true"
+                    android:flipInterval="2000">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/swipe1" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/swipe3" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/slide1" />
+                </ViewFlipper>
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_below="@id/slide"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:paddingTop="20dp"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:id="@+id/gridLayout" />
+    <ImageButton
+        android:id="@+id/btn_suggest"
+        android:layout_width="180dp"
+        android:layout_height="160dp"
+        android:src="@mipmap/suggest"
+        android:background="#CB8CB1"
+        android:onClick="suggestCollege"
+        android:layout_below="@+id/slide"
+        android:layout_column="0"
+        android:layout_row="0"/>
 
 
-        <ImageButton
-            android:id="@+id/btn_request"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:background="@drawable/img"
-            android:onClick="requestStatus"
-            android:layout_alignTop="@+id/btn_suggest"
-            android:layout_alignStart="@+id/btn_rateAgent" />
+    <ImageButton
+        android:id="@+id/btn_request"
+        android:layout_width="180dp"
+        android:layout_height="160dp"
+        android:src="@mipmap/request"
+        android:onClick="requestStatus"
+        android:background="#99A2CD"
+        android:layout_toRightOf="@id/btn_suggest"
+        android:layout_below="@id/slide"
+        android:layout_column="1"
+        android:layout_row="0" />
 
-        <ImageButton
-            android:id="@+id/btn_topSearches"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:background="@drawable/img2"
-            android:onClick="topSearches"
-            android:layout_marginTop="50dp"
-            android:layout_below="@+id/btn_suggest"
-            android:layout_alignStart="@+id/btn_suggest" />
+    <ImageButton
+        android:id="@+id/btn_topSearches"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@mipmap/search"
+        android:background="#8EBDB7"
+        android:onClick="topSearches"
+        android:layout_column="0"
+        android:layout_row="1"
+        android:layout_below="@+id/btn_suggest"
+        android:layout_alignParentStart="true" />
 
-        <ImageButton
-            android:id="@+id/btn_rateAgent"
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:background="@drawable/img1"
-            android:onClick="rateAgent"
-            android:layout_marginStart="56dp"
-            android:layout_alignTop="@+id/btn_topSearches"
-            android:layout_toEndOf="@+id/btn_topSearches" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="Suggestions"
-            android:background="#000"
-            android:textColor="#fff"
-            android:textSize="20dp"
-            android:layout_below="@+id/btn_suggest"
-            android:layout_alignEnd="@+id/btn_suggest" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/btn_request"
-            android:layout_below="@+id/btn_request"
-            android:text="Request"
-            android:background="#000"
-            android:textColor="#fff"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/btn_topSearches"
-            android:layout_below="@+id/btn_topSearches"
-            android:text="Search"
-            android:background="#000"
-            android:textColor="#fff"
-            android:textSize="20dp"/>
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/btn_rateAgent"
-            android:layout_below="@+id/btn_rateAgent"
-            android:text="Ratings"
-            android:background="#000"
-            android:textColor="#fff"
-            android:textSize="20dp"/>
-
+    <ImageButton
+        android:id="@+id/btn_rateAgent"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@mipmap/rate"
+        android:background="#B394CD"
+        android:onClick="rateAgent"
+        android:layout_column="1"
+        android:layout_row="1"
+        android:layout_below="@id/btn_request"
+        android:layout_toEndOf="@+id/btn_suggest" />
 </RelativeLayout>
