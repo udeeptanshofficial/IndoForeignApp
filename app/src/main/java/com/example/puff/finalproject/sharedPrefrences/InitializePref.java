@@ -3,10 +3,6 @@ package com.example.puff.finalproject.sharedPrefrences;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * Created by deeptansh on 30/3/17.
- */
-
 public class InitializePref {
     Context context;
     SharedPreferences sharedPreferences;

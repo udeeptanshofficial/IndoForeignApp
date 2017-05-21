@@ -158,16 +158,6 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
             categoryEntry();
         }
     }
-<<<<<<< HEAD
-
-    public void categoryEntry() {
-        final String courses = course.getText().toString();
-        final String spnr = spn.getSelectedItem().toString();
-        final String getName;
-        int SelectedId = radiogp.getCheckedRadioButtonId();
-        or3 = (RadioButton) view.findViewById(SelectedId);
-        final String getCountry = or3.getText().toString();
-=======
     public void categoryEntry()
     {
         final String courses=course.getText().toString();
@@ -176,7 +166,6 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
         int SelectedId=radiogp.getCheckedRadioButtonId();
         or3=(RadioButton)view.findViewById(SelectedId);
         final String getCountry=or3.getText().toString();
->>>>>>> b3075743836afffd97e372a45eed4e34fbef18e4
         StringRequest stringRequest;
         final ProgressDialog loading = ProgressDialog.show(this.getActivity(), "Please Wait.....", "Response Submit", false, false);
         stringRequest = new StringRequest(Request.Method.POST, Category_URL,
@@ -228,7 +217,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
 
 
         if (getCourse.isEmpty()) {
-            course.setError("Enter First Name");
+            course.setError("Select Course");
             return true;
         }
         if (getCountry1.isEmpty()) {

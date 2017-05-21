@@ -7,8 +7,10 @@
     tools:context="com.example.puff.finalproject.student.ApplicationList">
     <ListView
         android:id="@+id/list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="344dp"
+        android:layout_height="551dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
 
     </ListView>
 

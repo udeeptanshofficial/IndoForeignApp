@@ -4,11 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/backpic"
+    android:background="@drawable/redbg"
     tools:context=".agent.LPAgent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="#D97F64"
+        android:elevation="10dp">
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logout"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="7dp"
+        android:id="@+id/imageView5" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -16,35 +31,35 @@
         android:background="@mipmap/user"
         android:id = "@+id/ib_students"
         android:onClick="studentList"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="21dp"
+        android:layout_alignTop="@+id/imageView5"
         android:layout_alignParentStart="true" />
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@mipmap/documents"
+        android:background="@mipmap/document"
         android:id = "@+id/ib_documents"
         android:onClick="viewDocuments"
         android:layout_alignTop="@+id/ib_students"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toStartOf="@+id/imageView5"
+        android:layout_marginEnd="20dp" />
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@mipmap/newuser"
         android:id = "@+id/ib_new"
         android:onClick="newStudent"
-        android:layout_alignTop="@+id/ib_updateStatus"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/ib_students"
+        android:layout_alignStart="@+id/ib_students"
+        android:layout_marginTop="23dp" />
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@mipmap/update"
+        android:background="@mipmap/status"
         android:id = "@+id/ib_updateStatus"
         android:onClick="updateStatus"
-        android:layout_marginTop="112dp"
-        android:layout_below="@+id/ib_documents"
-        android:layout_alignLeft="@+id/ib_documents"
+        android:layout_alignTop="@+id/ib_new"
         android:layout_alignStart="@+id/ib_documents" />
 
 </RelativeLayout>

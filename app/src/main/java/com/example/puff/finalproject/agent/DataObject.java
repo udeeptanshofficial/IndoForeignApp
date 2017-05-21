@@ -1,8 +1,6 @@
 package com.example.puff.finalproject.agent;
 
-/**
- * Created by deeptansh on 20/3/17.
- */
+
 public class DataObject {
     private String mText1;
     private String mText2;
