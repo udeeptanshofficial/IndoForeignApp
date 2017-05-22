@@ -57,20 +57,20 @@ public class ApplicationAdapter extends ArrayAdapter<ApplicationModel> {
                 break;
             case 30: status.setImageResource(R.mipmap.thirty);
                 break;
-            /*case 40: status.setBackground();
+            case 40: status.setImageResource(R.mipmap.fourty);
                 break;
-            case 50: status.setBackground();
+            case 50: status.setImageResource(R.mipmap.fifty);
                 break;
-            case 60: status.setBackground();
+            case 60: status.setImageResource(R.mipmap.sixty);
                 break;
-            case 70: status.setBackground();
+            case 70: status.setImageResource(R.mipmap.seventy);
                 break;
-            case 80: status.setBackground();
+            case 80: status.setImageResource(R.mipmap.eighty);
                 break;
-            case 90: status.setBackground();
+            case 90: status.setImageResource(R.mipmap.ninety);
                 break;
-            case 100: status.setBackground();
-                break;*/
+            case 100: status.setImageResource(R.mipmap.hundred);
+                break;
 
         }
         return rowView;

@@ -64,7 +64,7 @@ public class UpdateDialog extends DialogFragment {
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
         final View promptView = inflater.inflate(R.layout.dialog_update,null);
-
+        context = this.getActivity();
         builder.setTitle("Update Status");
 
         builder.setView(promptView)
@@ -79,7 +79,7 @@ public class UpdateDialog extends DialogFragment {
                         radioButton = (RadioButton) promptView.findViewById(selectedId);
                         if(radioButton.getText().equals("Accept")){status="ok";}
                         else if(radioButton.getText().equals("Reject")){status="no";}
-                        updateStatus();
+                        updateStatus(context);
                     }
                 });
 
@@ -119,7 +119,7 @@ public class UpdateDialog extends DialogFragment {
         }
 
     }
-    public void updateStatus(){
+    public void updateStatus(final Context c){
         StringRequest request = new StringRequest(Request.Method.POST, "https://alishakapoor22895.000webhostapp.com/agent/updateStatus.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -141,10 +141,8 @@ public class UpdateDialog extends DialogFragment {
                     e.printStackTrace();
                 }*/
 
-                try{Intent intent = new Intent(getActivity().getApplicationContext(),StudentsApplication.class);
-                startActivity(intent);}catch(Exception e){
-                    Log.d("TAG", "onResponse: "+e.getMessage());
-                }
+                Intent intent = new Intent(c,StudentsApplication.class);
+                c.startActivity(intent);
             }
         }, new Response.ErrorListener() {
             @Override

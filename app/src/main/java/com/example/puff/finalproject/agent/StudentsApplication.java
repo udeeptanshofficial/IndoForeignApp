@@ -55,7 +55,7 @@ public class StudentsApplication extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
-                        Toast.makeText(StudentsApplication.this,s, Toast.LENGTH_LONG).show();
+
                         Log.d("TAG", "onResponse: "+s);
                         processResponse(s);
                         ApplicationAdapter applicationAdapter = new ApplicationAdapter(StudentsApplication.this,R.layout.rating_list,setListAdapter());

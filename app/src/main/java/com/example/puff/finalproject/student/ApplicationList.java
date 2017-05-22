@@ -53,7 +53,7 @@ public class ApplicationList extends AppCompatActivity{
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
-                        Toast.makeText(ApplicationList.this,s, Toast.LENGTH_LONG).show();
+                        //Toast.makeText(ApplicationList.this,s, Toast.LENGTH_LONG).show();
                         Log.d("TAG", "onResponse: "+s);
                         processResponse(s);
                         ApplicationAdapter applicationAdapter = new ApplicationAdapter(ApplicationList.this,R.layout.rating_list,setListAdapter());
