@@ -76,7 +76,9 @@ public class CollegeSuggestions extends AppCompatActivity {
                     @Override
                     public void onResponse(String s) {
 
-                        try{processJson(s);
+                        try{
+                            Log.d("TAG", "onResponse: "+s);
+                            processJson(s);
                             mRecyclerView.setHasFixedSize(true);
                             mLayoutManager = new LinearLayoutManager(CollegeSuggestions.this);
                             mRecyclerView.setLayoutManager(mLayoutManager);

@@ -22,8 +22,8 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
 import com.example.puff.finalproject.sharedPrefrences.InitializePref;
-import com.onesignal.OSNotification;
-import com.onesignal.OneSignal;
+//import com.onesignal.OSNotification;
+//import com.onesignal.OneSignal;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,7 +56,7 @@ public class AgentRating extends AppCompatActivity {
     }
     String uid;
     public void submit(View view){
-        OneSignal.startInit(this).inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification).init();
+       /* OneSignal.startInit(this).inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification).init();
 
         OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
             @Override
@@ -82,7 +82,7 @@ public class AgentRating extends AppCompatActivity {
                 if (registrationId != null)
                     Log.d("debug", "registrationId:" + registrationId);
             }
-        });
+        });*/
         //Log.d("TAG", "submit: "+uid);
         final String student = sharedpreference.getString("Student_name","");
         final Float value = rate.getRating();

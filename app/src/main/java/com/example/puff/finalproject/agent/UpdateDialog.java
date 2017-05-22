@@ -28,7 +28,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
 import com.example.puff.finalproject.sharedPrefrences.InitializePref;
-import com.onesignal.OneSignal;
+//import com.onesignal.OneSignal;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -123,7 +123,7 @@ public class UpdateDialog extends DialogFragment {
         StringRequest request = new StringRequest(Request.Method.POST, "https://alishakapoor22895.000webhostapp.com/agent/updateStatus.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                try {
+               /* try {
                     String test_message = "Your applivation has a new update "+process;
                     OneSignal.postNotification(new JSONObject("{'contents': {'en':'"+test_message+"'}, 'include_player_ids': ['" + playerid + "']}"),
                             new OneSignal.PostNotificationResponseHandler() {
@@ -139,10 +139,12 @@ public class UpdateDialog extends DialogFragment {
                             });
                 } catch (JSONException e) {
                     e.printStackTrace();
-                }
+                }*/
 
-                Intent intent = new Intent(getContext(),StudentsApplication.class);
-                startActivity(intent);
+                try{Intent intent = new Intent(getActivity().getApplicationContext(),StudentsApplication.class);
+                startActivity(intent);}catch(Exception e){
+                    Log.d("TAG", "onResponse: "+e.getMessage());
+                }
             }
         }, new Response.ErrorListener() {
             @Override

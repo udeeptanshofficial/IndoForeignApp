@@ -22,7 +22,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.puff.finalproject.R;
 import com.example.puff.finalproject.agent.LPAgent;
 import com.example.puff.finalproject.sharedPrefrences.InitializePref;
-import com.onesignal.OneSignal;
+//import com.onesignal.OneSignal;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -75,12 +75,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             startActivity(i);
         }
 
-    }String uid;
+    }String uid = "id";
     public void loginUser() {
         if(inValid()){
             return;
         }
-        OneSignal.startInit(this).inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification).init();
+        /*OneSignal.startInit(this).inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification).init();
 
         OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
             @Override
@@ -90,7 +90,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 if (registrationId != null)
                     Log.d("debug", "registrationId:" + registrationId);
             }
-        });
+        });*/
         final String username1 = oe1.getText().toString();
         final String password1 = oe2.getText().toString();
         final ProgressDialog loading = ProgressDialog.show(this, "Please Wait....", "loggin In....", false, false);
