@@ -127,11 +127,11 @@ public class Qualification extends AppCompatActivity implements AdapterView.OnIt
         arrayl2 = new ArrayList<String>();
         arrayl2.add("2017");
         arrayl2.add("2018");
-        spn3.setAdapter(adapter3);
-
         arrayl2.add("2019");
         arrayl2.add("2020");
         adapter3 = new ArrayAdapter(this, R.layout.spinner1_item, arrayl2);
+        spn3.setAdapter(adapter3);
+
         spn4 = (Spinner) findViewById(R.id.s4);
         spn4.setOnItemSelectedListener(this);
         arrayl3 = new ArrayList<String>();

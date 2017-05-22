@@ -218,7 +218,7 @@ public class Categories extends Fragment implements AdapterView.OnItemSelectedLi
 
 
         if (getCourse.isEmpty()) {
-            course.setError("Enter First Name");
+            course.setError("Select Course");
             return true;
         }
         if (getCountry1.isEmpty()) {

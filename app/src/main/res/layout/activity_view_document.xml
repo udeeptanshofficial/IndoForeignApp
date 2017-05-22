@@ -6,7 +6,8 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/try2"
         tools:context=".agent.ViewDocument">
 
     <EditText
@@ -66,9 +67,9 @@
             android:text="Browse"
             android:id="@+id/bt2"
             android:layout_marginLeft="15dp"
-            android:layout_alignStart="@+id/bt3"
-            android:layout_marginStart="8dp"
-            android:layout_below="@+id/b1" />
+            android:layout_alignBaseline="@+id/mark12"
+            android:layout_alignBottom="@+id/mark12"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,8 +107,8 @@
             android:text="Browse"
             android:id="@+id/bt4"
             android:layout_marginLeft="15dp"
-            android:layout_below="@+id/bt3"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/t4" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -186,7 +187,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:text="Passport"
             android:textColor="#000"
             android:id="@+id/t9"
             android:textSize="20dp"

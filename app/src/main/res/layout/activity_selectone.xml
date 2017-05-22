@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
-        android:background="#c62828"
+        android:background="#D7473F"
         android:elevation="10dp">
     </android.support.v7.widget.Toolbar>
 
