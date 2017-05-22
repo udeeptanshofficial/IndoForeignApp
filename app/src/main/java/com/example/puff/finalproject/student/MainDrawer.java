@@ -112,7 +112,8 @@ public class MainDrawer extends AppCompatActivity
         startActivity(intent);
     }
     public void topSearches(View view){
-
+        intent = new Intent(this,TopSearch.class);
+        startActivity(intent);
     }
     public void rateAgent(View view){
         intent = new Intent(this,AgentRating.class);

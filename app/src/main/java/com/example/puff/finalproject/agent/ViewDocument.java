@@ -40,16 +40,13 @@ public class ViewDocument extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_document);
-        marksheet_10 = (CheckBox) findViewById(R.id.c1);
-        marksheet_12 = (CheckBox) findViewById(R.id.c2);
-        marksheet_graduation = (CheckBox) findViewById(R.id.c3);
         download_1 = (Button) findViewById(R.id.b1);
         download_2 = (Button) findViewById(R.id.button);
-        download_3 = (Button) findViewById(R.id.b3);
+       // download_3 = (Button) findViewById(R.id.b3);
 
     }
     public void check(View v){
-        /*if(marksheet_10.isChecked())*/ download_1.setVisibility(View.VISIBLE);download_1.setBackgroundColor(Color.CYAN);
+        /*if(marksheet_10.isChecked())*/ download_1.setVisibility(View.VISIBLE);download_1.setBackgroundColor(Color.CYAN);downloadTen(v);
         /*else {
             download_1.setClickable(false);download_1.setVisibility(View.INVISIBLE);
         }
